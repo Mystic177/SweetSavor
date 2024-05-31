@@ -16,7 +16,7 @@
 <div class="container">
     <h1>Accedi</h1>
 
-    <form action="" method="post">
+    <form action="/loginServlet" method="post">
 
         <div class="mailInput">
             <input type="text" placeholder="Email" id="email">
@@ -34,7 +34,7 @@
 
         <button type="submit" class="btn">Accedi</button>
     </form>
-    <hr style="width:100%;text-align:left;margin-left:50">
+    <hr style="width:100%;text-align:left;margin-left:50px">
 
     <div class="loginWith">
         <button type="button" class="btn">

@@ -3,4 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>login.html</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>JspServlet</servlet-name>
+        <jsp-file>/utente.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JspServlet</servlet-name>
+        <url-pattern>/utente</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.example.sweetsavor.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

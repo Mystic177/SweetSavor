@@ -1,9 +1,11 @@
-package com.example.sweetsavor;
+package DatabaseObjs;
 
 
 //classe java per il prodotto (creare pagina web per ogni prodotto)
 //collegamento al Database
+//Prefisso = 
 
+import com.example.sweetsavor.DatabaseProductInteraction;
 
 public class Product {
     private int productId;
@@ -59,4 +61,21 @@ public class Product {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    public void encryptString(String str){
+//        Connessione al database
+//        connettore al database
+//        Scrittura nel database
+//        https://github.com/MoonMr404/p    file utili
+        DatabaseProductInteraction connection = new DatabaseProductInteraction();
+
+
+
+
+    }
+
+
+
+
+
 }
