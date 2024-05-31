@@ -59,4 +59,21 @@ public class Product {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    public void encryptString(String str){
+//        Connessione al database
+//        connettore al database
+//        Scrittura nel database
+//        https://github.com/MoonMr404/p    file utili
+        DatabaseProductInteraction connection = new DatabaseProductInteraction();
+
+
+
+
+    }
+
+
+
+
+
 }
