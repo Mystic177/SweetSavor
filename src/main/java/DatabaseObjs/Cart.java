@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Cart {
     private List<Prodotto> listaProdotti;
+    private int totaleCarrello;
     
     
     public Cart (){
