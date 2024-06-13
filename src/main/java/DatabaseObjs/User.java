@@ -49,5 +49,13 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+    
+    public boolean loggedIn(){
+        if(this.username.equals("admin") && this.password.equals("admin")){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }   
 

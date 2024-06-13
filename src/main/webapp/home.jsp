@@ -1,4 +1,10 @@
+<%@ page import="DatabaseObjs.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- Codice JSP-->
+<%
+    User user = (User) request.getSession().getAttribute("user");
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,10 +13,17 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
-
-        <header>
-            <img id="cup" src="SweetSavor.png">
+            <header>
+            <img id="cup" src="./img/SweetSavor.png">
         </header>
+    <% 
+        if (user != null && user.loggedIn()){
+    %> <p>Benvenuto <%= user.getUsername()%></p>            
+   
+   <% } else { %>
+        <p>Non sei registrato? <a href="registration.jsp">Registrati!</a></p>
+   <% } %>
+   
         <div class="nav-bar">
             <ul class="menu">
                 <li><a href="index.html">HOME</a></li>
@@ -51,9 +64,9 @@
                 <h1 class="home-header">GLI ULTIMI PRODOTTI</h1>
                 <!-- Showcase prodotti -->
                 <div class="image-container">
-                    <a href="Pagina1.html"><img src="chocolate 1.png" class="productImage" ></a>
-                    <a href="Pagina1.html"><img src="tisana (6).png" class="productImage" ></a>
-                    <a href="Pagina1.html"><img src="tisana (7).png" class="productImage" ></a>
+                    <a href="Pagina1.html"><img src="./img/chocolate 1.png" class="productImage" ></a>
+                    <a href="Pagina1.html"><img src="./img/tisana (6).png" class="productImage" ></a>
+                    <a href="Pagina1.html"><img src="./img/tisana (7).png" class="productImage" ></a>
                     
                 </div>
 
