@@ -16,6 +16,9 @@ public class Cart {
         listaProdotti.add(prodotto);
     }
     
+
+    
+    
     public void removeprodotto(Prodotto prodotto){
         for(Prodotto prodotto1 : listaProdotti){
             if(prodotto1.equals(prodotto)){
