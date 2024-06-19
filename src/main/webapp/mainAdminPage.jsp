@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-
 <!-- Creare il redirect della pagina verso admin login
 Check pw (se == admin data redirect-> admin view/page)
 -->
-
     <head>
+        <title>Admin Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./CSS/admin.css"  type="text/css">            
-        <title>Home Page</title>
+        
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="./Javascript/async.js"></script>
     </head>
@@ -27,6 +26,7 @@ Check pw (se == admin data redirect-> admin view/page)
                     <li><a href="stats.html">Ordini</a></li>
                     <li><a href="stats.html">Recensioni </a></li>
                     <li><a href="stats.html">Transazioni</a></li>
+                    <li><a href="Upload.jsp">Aggiungi un prodotto</a></li>
                 </ul>
                 <button type="submit" onclick="loadDoc()">BOTTONE</button>
             </div>

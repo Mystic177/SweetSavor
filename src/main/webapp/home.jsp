@@ -10,13 +10,11 @@
     <head>
         <title>Home</title>
         <meta name="viewport" content="initial-scale=1, width=device-width">
-        <link rel="stylesheet" href="CSS/home.css">
+        <link rel="stylesheet" href="./CSS/home.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
-            <header>
-            <img id="cup" src="./img/SweetSavor.png">
-        </header>
+
     <% 
         if (user != null && user.loggedIn()){
     %> <p>Benvenuto <%= user.getUsername()%></p>            
@@ -24,7 +22,10 @@
    <% } else { %>
         <p>Non sei registrato? <a href="registration.jsp">Registrati!</a></p>
    <% } %>
-   
+
+            <%@include file="./HtmlElements/navbar.jsp" %>
+        <style><%@include file="./CSS/home.css"%></style>
+   <!--
         <div class="nav-bar">
             <ul class="menu">
                 <li><a href="index.html">HOME</a></li>
@@ -58,7 +59,7 @@
                 </ul>
 
             </ul>
-                       
+          -->            
             <!-- Container home -->
             <div class="home-container">
 

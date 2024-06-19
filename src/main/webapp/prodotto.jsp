@@ -2,41 +2,25 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <!-- Metatags, titolo, CSS, JavaScript, ecc. -->
-    <!--tile = getProductName? -->
-    <style><%@include file="/CSS/home.css"%></style>
-
-    <title></title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Altri tag head -->
-</head>
-<body>
-<!-- Il contenuto del tuo header -->
-<header>
-</header>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html>
     <head>
         <!-- AGGIUNGERE IMMAGINI MULTIPLE IA -->
         <!-- codice JSP per il titolo in -->
+         <!-- Metatags, titolo, CSS, JavaScript, ecc. -->
+    <!--tile = getProductName? -->
+    
         <title>ProductPage</title>
         <meta name="viewport" content="initial-scale=1, width=device-width">
         <link rel="stylesheet" href="./CSS/prodotto.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
         <script src="https://kit.fontawesome.com/54779b1c8e.js" crossorigin="anonymous"></script>
     </head>
     
     <body>
 
-        <%@include file="HTML/header.jsp"%>
-        
-        <script src="./Javascript/commands.js"></script>
+    
+    <%@include file="./HtmlElements/navbar.jsp" %>
+    
+    <script src="./Javascript/commands.js"></script>
 
         <div class="product-main-box">
 
@@ -102,7 +86,9 @@
         </div>
 
         <p>Una side bar non sarebbe male </p>
-        <%@include file="HTML/footer.jsp"%>
+        <%@include file="./HtmlElements/footer.jsp"%>
+        <style><%@include file="./CSS/home.css"%></style>
+
         
     </body>
 </html>
