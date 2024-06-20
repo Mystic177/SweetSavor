@@ -56,14 +56,14 @@
                         <p class="availability">Disponibilità: <span class="in-stock">In Stock</span> <i id="check-i"class="fa-solid fa-check"></i></p>
                         
                         
-                    </div>
-
+                    </div>   
+                                  
+                    <p>Descrizione <br>Un'armoniosa miscela di camomilla rilassante, lavanda profumata e melissa calmante, danza di aromi sotto la luce argentea della serata. Una carezza alla mente, perfetta per distendersi dopo una lunga giornata.</p>
                     <form action="#">
                         <button id="buy-button" onclick="buyProduct()">Aggiungi al carrello </button>
                         <button id="buy-button" onclick="">Aggiungi alla wishlist </button>
                     </form>
 
-                    <p>Un'armoniosa miscela di camomilla rilassante, lavanda profumata e melissa calmante, danza di aromi sotto la luce argentea della serata. Una carezza alla mente, perfetta per distendersi dopo una lunga giornata.</p>
                 </div>
             
 

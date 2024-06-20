@@ -1,4 +1,4 @@
-package DatabaseObjs;
+package model;
 
 import java.util.Random;
 

@@ -21,7 +21,7 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.example.sweetsavor.LoginServlet</servlet-class>
+        <servlet-class>control.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

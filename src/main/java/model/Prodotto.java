@@ -1,4 +1,4 @@
-package DatabaseObjs;
+package model;
 
 public class Prodotto {
     //super classe da estendere

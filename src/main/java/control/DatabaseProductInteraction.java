@@ -1,7 +1,7 @@
-package com.example.sweetsavor;
+package control;
 
 
-import DatabaseObjs.Product;
+import model.Product;
 
 import java.sql.*;
 import java.util.ArrayList;

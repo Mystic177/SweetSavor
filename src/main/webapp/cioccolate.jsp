@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- <%@include file="HTML/footer.jsp"%> -->
+<!-- <%@include file="HtmlElements/footer.jsp"%> -->
 <!-- <%@include file="HTML/header.jsp"%> -->
  <html>
     <head>

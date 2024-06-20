@@ -1,11 +1,11 @@
-package DatabaseObjs;
+package model;
 
 
 //classe java per il prodotto (creare pagina web per ogni prodotto)
 //collegamento al Database
 //Prefisso = 
 
-import com.example.sweetsavor.DatabaseProductInteraction;
+import control.DatabaseProductInteraction;
 
 public class Product {
     private int productId;

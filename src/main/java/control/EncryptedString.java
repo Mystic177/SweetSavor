@@ -1,4 +1,4 @@
-package com.example.sweetsavor;
+package control;
 
 public class EncryptedString {
     private String encryptedStringResult;
