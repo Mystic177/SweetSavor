@@ -5,11 +5,12 @@ import java.util.Random;
 public class Admin extends User {
     private String adminID;
 
-    public Admin(String username, String password, String email, String address) {
-        super(username, password, email, address);
+    public Admin(String username, String password, String email, String address, String userID, String adminID) {
+        super(username, password, email, address, userID);
         String subFix = adminIDSubFix();
         this.adminID = "05AD" + subFix;
     }
+    
 
     public String getAdminID() {
         return adminID;

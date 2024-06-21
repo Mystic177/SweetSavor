@@ -9,7 +9,17 @@ public class Prodotto {
     private boolean disponibile;
     private String venditore;
     private String categoria;
-        
+    private String imgUrl;
+
+    public Prodotto(String descrizione, double prezzo, int disponibilità, boolean disponibile, String venditore, String categoria, String imgUrl) {
+        this.descrizione = descrizione;
+        this.prezzo = prezzo;
+        this.disponibilità = disponibilità;
+        this.disponibile = disponibile;
+        this.venditore = venditore;
+        this.categoria = categoria;
+        this.imgUrl = imgUrl;
+    }
 
     public String getDescrizione() {
         return descrizione;
@@ -57,5 +67,13 @@ public class Prodotto {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

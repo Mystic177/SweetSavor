@@ -3,6 +3,8 @@
 <!-- Codice JSP-->
 <%
     User user = (User) request.getSession().getAttribute("user");
+    
+    
 %>
 
 <!DOCTYPE html>

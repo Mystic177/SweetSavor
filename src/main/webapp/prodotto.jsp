@@ -28,13 +28,7 @@
 
                 <div class="image-box">
                     <!-- Aggiungere richiesta product.getImg() -->
-                    <img class="mySlides" src="./img/tisana (2).png" height="300">
-                    <img class="mySlides" src="./img/tisana (3).png" height="300">
-                    <img class="mySlides" src="./img/tisana (5).png" height="300">
-                    
-                    <button class="left-button" onclick="plusSlides(-1)">&lt;</button>
-                    <button class="right-button" onclick="plusSlides(1)">&gt;</button>                   
-                    
+                    <img class="mySlides" src="./img/tisana (2).png" height="300">        
                 </div>
                 
                 <div class="user-box">
@@ -65,27 +59,13 @@
                     </form>
 
                 </div>
-            
-
-
-                <ol class="image-showcase">
-                    <!-- far matchare le immagini  -->
-                    <!-- onload="this.width = this.naturalWidth; this.height = this.naturalHeight" -->
-                    <li><img src="./img/chocolate.png" width="200" ></li>
-                    <li><img src="./img/chocolate.png" width="200" ></li>
-                    <li><img src="./img/chocolate.png" width="200" ></li>
-    
-                </ol>
-
-               
+                        
                   
                
 
 
             </div>
         </div>
-
-        <p>Una side bar non sarebbe male </p>
         <%@include file="./HtmlElements/footer.jsp"%>
         <style><%@include file="./CSS/home.css"%></style>
 

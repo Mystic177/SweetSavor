@@ -4,14 +4,11 @@ import java.util.Random;
 
 public class Cliente extends User{
     private String clientID;
-    
-    public Cliente(String username, String password, String email, String address) {
-        super(username, password, email, address);
-        
+
+    public Cliente(String username, String password, String email, String address, String userID, String clientID) {
+        super(username, password, email, address, userID);
         this.clientID = "07CL" + clientIDSubFix();
     }
-
-
 
     public String clientIDSubFix(){
         int leftLimit = 97; // letter 'a'
