@@ -10,7 +10,7 @@
 <body>
 
 <header>
-    <img id="cup" src="SweetSavor.png">
+    <img id="cup" src="./img/SweetSavor.png">
 </header>
 
 <div class="container">
@@ -34,7 +34,7 @@
 
         <button type="submit" class="btn">Accedi</button>
     </form>
-    <hr style="width:100%;text-align:left;margin-left:50px">
+    <hr style="width:100%;text-align:left;">
 
     <div class="loginWith">
         <button type="button" class="btn">
@@ -45,6 +45,7 @@
         </button>
     </div>
 </div>
+
 
 </body>
 </html>

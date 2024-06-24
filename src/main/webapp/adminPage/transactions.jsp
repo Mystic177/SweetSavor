@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Transazioni</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../CSS/admin.css">
 </head>
 <body>
 <div class="card section">

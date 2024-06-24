@@ -29,7 +29,6 @@ header {
     transform: translateY(5%);
     padding: 20px;
     background-color: #FAEDCD;
-    
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -62,10 +61,10 @@ input[type="text"], input[type="password"] {
 }
 
 
-
 /* Stile per le icone all'interno dei campi di input */
 .nameInput, .mailInput, .password, .indirizzo {
     position: relative;
+    
     width: 100%;
 }
 
@@ -138,4 +137,9 @@ hr {
     margin: 20px 0;
     border: none;
     border-top: 1px solid #ccc;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
 }

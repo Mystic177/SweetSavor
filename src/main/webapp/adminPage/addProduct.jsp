@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8"  content="width=device-width, initial-scale=1.0">
     <title>Aggiungi Prodotti</title>
-    <link rel="stylesheet"  href="admin.css">
+    <link rel="stylesheet"  href="../CSS/admin.css">
 </head>
 <body>
 <div class="card section">
@@ -28,11 +28,23 @@
             <label for="product-stock">Stock Prodotto:</label>
             <input type="number" id="product-stock" name="productStock">
         </div>
+
+
+        <select name="products" id="product-id-selection"></span><br>
+            <option value="051">Cioccolata</option>
+            <option value="052">Tisana</option>
+            <option value="053">Tè</option>
+            <option value="054">Regalo</option>
+        </select>
+        
         <div class="form-group">
+            <br>
             <label for="product-image">Immagine Prodotto:</label>
             <input type="file" id="product-image" name="productImage" class="file-input">
             <button type="button" class="custom-file-button" onclick="document.getElementById('product-image').click()">Scegli File</button>
         </div>
+
+
         <div class="form-group">
             <button type="submit" class="custom-file-button">Aggiungi Prodotto</button>
         </div>

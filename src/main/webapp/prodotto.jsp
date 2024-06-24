@@ -18,7 +18,7 @@
     <body>
 
     
-    <%@include file="./HtmlElements/navbar.jsp" %>
+    <%@include file="./fragments/navbar.jsp" %>
     
     <script src="./Javascript/commands.js"></script>
 
@@ -66,7 +66,7 @@
 
             </div>
         </div>
-        <%@include file="./HtmlElements/footer.jsp"%>
+        <%@include file="./fragments/footer.jsp"%>
         <style><%@include file="./CSS/home.css"%></style>
 
         

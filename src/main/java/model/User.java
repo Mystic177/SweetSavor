@@ -10,18 +10,26 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private String address;
     private String userID;
+    private boolean admin;
             //ID univoco per ogni cliente
 
-
-    public User(String username, String password, String email, String address, String userID) {
+    
+    
+    public User(String username, String password, String email, String userID) {
         this.username = username;
         this.password = hashPassword(password);//hashing pw
         this.email = email;
-        this.address = address;
         this.userID = userID;
         //Creazione ID
+    }
+
+    public User() {
+        
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getUserID() {
@@ -52,14 +60,13 @@ public class User {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public boolean isAmministratore() {
+        return admin;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAmministratore(boolean amministratore) {
+        this.admin = amministratore;
     }
-
 
     //Metodo per l'hashing della password
     private String hashPassword(String password) {

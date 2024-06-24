@@ -172,7 +172,6 @@ h1, p {
 .home-container {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
     margin: 20px auto;
     padding: 20px 0;
 }
@@ -185,10 +184,8 @@ h1, p {
 
 /* Stile per la riga 1 */
 .rows-1 {
-    /* background-color: #fff; */
     padding: 20px;
     margin-bottom: 20px;
-
     border-radius: 5px;
 }
 
@@ -225,8 +222,7 @@ footer {
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid black;
-
-
+    margin-top: 20px;
 }
 
 .footer-container {

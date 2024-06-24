@@ -1,11 +1,11 @@
-body{
+body {
     background-color: #E6CCB2;
 }
 
 header {
     display: flex;
     justify-content: center;
-    margin: 20px 0px -170px 0px;
+    margin: 20px 0;
 }
 
 #cup {
@@ -17,15 +17,12 @@ header {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-
 /* Stile per il contenitore principale */
 .container {
     max-width: 500px;
-    margin: 0 auto;
-    transform: translateY(50%);
-    padding: 20px;
+    margin: 50px auto;
+    padding: 30px 20px;
     background-color: #FAEDCD;
-    
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -49,25 +46,23 @@ form {
 /* Stile per i campi di input */
 input[type="text"], input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px 20px;
+    margin: 12px 0;
     border: 1px solid #ccc;
     border-radius: 50px;
     box-sizing: border-box;
     font-size: 16px;
 }
 
-
-
 /* Stile per le icone all'interno dei campi di input */
-.mailInput, .password{
+.mailInput, .password {
     position: relative;
     width: 100%;
 }
 
-.mailInput i, .password i{
+.mailInput i, .password i {
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
@@ -81,21 +76,19 @@ input[type="text"], input[type="password"] {
     font-size: 14px;
 }
 
-
-.not-registered a{
+.not-registered a {
     text-decoration: none;
 }
 
-.not-registered a:hover{
+.not-registered a:hover {
     text-decoration: underline;
 }
-
 
 /* Stile per il pulsante */
 .btn {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px 20px;
+    margin: 12px 0;
     border: none;
     border-radius: 50px;
     background-color: #FFFFF0;
@@ -109,10 +102,9 @@ input[type="text"], input[type="password"] {
     background-color: #bbb29abd;
 }
 
-.btn:active{
+.btn:active {
     background-color: #bbb29abd;
 }
-
 
 /* Stile per accesso con google e facebook */
 .loginWith .btn {
