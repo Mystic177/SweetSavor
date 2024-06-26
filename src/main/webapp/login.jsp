@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -16,24 +18,26 @@
 <div class="container">
     <h1>Accedi</h1>
 
-    <form action="/loginServlet" method="post">
+    <form action="loginServlet" method="post">
 
         <div class="mailInput">
-            <input type="text" placeholder="Email" id="email">
+            <input type="text" placeholder="Email" id="email" name="email"> <!-- Aggiunto name="email" -->
             <i class='bx bxs-envelope'></i>
         </div>
 
         <div class="password">
-            <input type="password" placeholder="Password" id="password">
+            <input type="password" placeholder="Password" id="password" name="password"> <!-- Aggiunto name="password" -->
             <i class='bx bxs-lock-alt'></i>
         </div>
 
         <div class="not-registered">
-            <p>Non hai un account? <a href="registration.html">Registrati </a></p>
+            <p>Non hai un account? <a href="<%= request.getContextPath() %>/registration.jsp">Registrati </a></p>
         </div>
 
         <button type="submit" class="btn">Accedi</button>
     </form>
+    
+    
     <hr style="width:100%;text-align:left;">
 
     <div class="loginWith">

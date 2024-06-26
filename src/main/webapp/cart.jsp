@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./CSS/cart.css">
 </head>
 <body>
-<script src="cart.js"></script>
+<script src="Javascript/cart.js"></script>
 <!-- Cart cart = (Cart) request.getSession().getAttribute("cart");-->
 <%    
     Cart cart1 = new Cart();

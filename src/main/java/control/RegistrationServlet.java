@@ -35,10 +35,11 @@ public class RegistrationServlet extends HttpServlet {
         // Verifica se username è null o una stringa vuota
         if (username == null || username.isEmpty()) {
             PrintWriter out = response.getWriter();
+            //script javascript in caso di errore 
             out.println("<script type=\"text/javascript\">");
-            out.println("alert('Username cannot be null or empty');");
-            out.println("window.location='registration.jsp';"); // Reindirizza alla pagina di registrazione
+            out.println("alert('L'username non può essere vuoto');");
             out.println("</script>");
+            response.sendRedirect(request.getContextPath() + "/registration.jsp");
             return; // Esce dal metodo doPost
         }
 
@@ -49,7 +50,7 @@ public class RegistrationServlet extends HttpServlet {
 
         try {
             userDao.doSave(user);
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/home.jsp");
         } catch (SQLException e) {
             PrintWriter out = response.getWriter();
             out.println("<script type=\"text/javascript\">");

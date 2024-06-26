@@ -13,7 +13,7 @@
 
 <div class="nav-bar">
 <ul class="menu">
-  <li><a href="index.html">HOME</a></li>
+  <li><a href="home.jsp">HOME</a></li>
   <li class="has-submenu">
     <a href="TeaPage.html">Te</a>
     <div class="submenu">
@@ -30,7 +30,7 @@
 
 
   <ul class="user-interaction-box">
-    <li><a href="login.html"><i class='bx bxs-user' id="accBox"></i></a></li>
+    <li><a href="login.jsp"><i class='bx bxs-user' id="accBox"></i></a></li>
 
     <div class="searchBarBox">
       <input type="text" placeholder="Ricerca" class="searchBar">
@@ -38,7 +38,7 @@
     </div>
 
     <div class="cart-icon">
-      <a href="carrello.html"><i class='bx bx-cart-add'></i></a>
+      <a href="cart.jsp"><i class='bx bx-cart-add'></i></a>
     </div>
 
   </ul>

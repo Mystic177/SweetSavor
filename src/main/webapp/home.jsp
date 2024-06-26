@@ -1,11 +1,5 @@
 <%@ page import="model.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!-- Codice JSP-->
-<%
-    User user = (User) request.getSession().getAttribute("user");
-    
-    
-%>
 
 <!DOCTYPE html>
 <html>
@@ -16,18 +10,10 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
-
-    <% 
-        if (user != null && user.loggedIn()){
-    %> <p>Benvenuto <%= user.getUsername()%></p>            
-   
-   <% } else { %>
-        <p>Non sei registrato? <a href="registration.jsp">Registrati!</a></p>
-   <% } %>
-
+    
             <%@include file="./fragments/navbar.jsp" %>
         <style><%@include file="./CSS/home.css"%></style>
-
+            
             <!-- Container home -->
             <div class="home-container">
 

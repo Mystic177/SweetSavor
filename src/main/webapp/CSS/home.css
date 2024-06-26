@@ -142,8 +142,8 @@ h1, p {
 }
 
 .searchBarBox .searchBar {
-    padding: 5px;           /* Add some padding for better appearance */
-    margin-right: 5px;      /* Space between input and search icon */
+    padding: 5px;           
+    margin-right: 5px;     
     margin-left: -15px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
@@ -223,6 +223,7 @@ footer {
     text-align: center;
     border-top: 1px solid black;
     margin-top: 20px;
+    background-color: #9a8776;
 }
 
 .footer-container {
@@ -232,11 +233,13 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+
 }
 
 .footer-section {
     flex: 1;
     margin: 20px;
+    
 }
 
 .footer-section h2 {

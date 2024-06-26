@@ -1,5 +1,8 @@
 package model;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -45,26 +48,29 @@ public class UserDao implements UserDaoInterface<User> {
     }
 
     @Override
-    public User retrieveInfoById(int id) throws SQLException {
-        String sql = "SELECT * FROM users WHERE userID = ?";
+    public User retrieveUser(String email, String password) throws SQLException {
+        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        User user = null;
 
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    User user = new User();
-                    user.setUsername(rs.getString("username"));
-                    user.setPassword(rs.getString("password"));
-                    user.setEmail(rs.getString("email"));
-                    user.setUserID(rs.getString("userID"));
-                    user.setAmministratore(rs.getBoolean("admin"));
-                    return user;
-                }
+            stmt.setString(1, email);
+            stmt.setString(2, password); 
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                user = new User();
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                user.setUserID(rs.getString("userID"));
+                user.setAmministratore(rs.getBoolean("admin"));
             }
         }
-        return null;
+        return user;
     }
-
+    
+    
     @Override
     public List<User> retrieveAll() throws SQLException {
         List<User> userList = new ArrayList<>();
@@ -82,5 +88,26 @@ public class UserDao implements UserDaoInterface<User> {
             }
         }
         return userList;
+    }
+
+
+
+    private String hashPassword(String password) {
+        if (password == null) {
+            throw new IllegalArgumentException("Password cannot be null");
+        }
+        
+        String hashString = null;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-512");
+            byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+            hashString = "";
+            for (int i = 0; i < hash.length; i++) {
+                hashString += Integer.toString((hash[i] & 0xff) | 0x100, 16).substring(1,3);
+            }
+        } catch (NoSuchAlgorithmException e){
+            e.printStackTrace();
+        }
+        return hashString;
     }
 }
