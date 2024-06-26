@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <html>
 <head>
 
@@ -15,7 +17,7 @@
 <ul class="menu">
 
   <li><a href="cioccolata.jsp">CIOCCOLATA</a></li>
-  <li><a href="te.jsp">TÉ</a></li>
+  <li><a href="te.jsp">TÈ</a></li>
   <li><a href="tisane.jsp">TISANE</a></li>
   <li><a href="accessori.jsp">ACCESSORI</a></li>
   <li><a href="regali.jsp">REGALI</a></li>
