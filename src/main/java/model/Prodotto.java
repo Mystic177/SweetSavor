@@ -1,13 +1,11 @@
 package model;
 
 public class Prodotto {
-    //super classe da estendere
     
     private String descrizione;//max chars
     private double prezzo;
     private int disponibilità; //e quantità disponibile
     private boolean disponibile;
-    private String venditore;
     private String categoria;
     private String imgUrl;
 
@@ -16,7 +14,6 @@ public class Prodotto {
         this.prezzo = prezzo;
         this.disponibilità = disponibilità;
         this.disponibile = disponibile;
-        this.venditore = venditore;
         this.categoria = categoria;
         this.imgUrl = imgUrl;
     }
@@ -53,14 +50,7 @@ public class Prodotto {
         this.disponibile = disponibile;
     }
 
-    public String getVenditore() {
-        return venditore;
-    }
-
-    public void setVenditore(String venditore) {
-        this.venditore = venditore;
-    }
-
+   
     public String getCategoria() {
         return categoria;
     }
