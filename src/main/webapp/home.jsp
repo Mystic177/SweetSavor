@@ -30,9 +30,9 @@
 
                 <div class="image-container">
                     <!-- Far combaciare la tisana con la pagina del prodotto -->
-                    <a href="paginatisane"><img src="tisana (1).png" class="productImage"></a>
-                    <a href="paginatisane"><img src="tisana (2).png" class="productImage"></a>
-                    <a href="paginatisane"><img src="tisana (3).png" class="productImage"></a>
+                    <a href="paginatisane"><img src="./img/tisana (1).png" class="productImage"></a>
+                    <a href="paginatisane"><img src="./img/tisana (2).png" class="productImage"></a>
+                    <a href="paginatisane"><img src="./img/tisana (3).png" class="productImage"></a>
                     
                 </div>
 
