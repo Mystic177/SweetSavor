@@ -14,11 +14,11 @@
 <div class="nav-bar">
 <ul class="menu">
 
-  <li><a href="TeaPage.html">CIOCCOLATA</a></li>
+  <li><a href="cioccolata.jsp">CIOCCOLATA</a></li>
   <li><a href="te.jsp">TÉ</a></li>
-  <li><a href="TeaPage.html">TISANE</a></li>
-  <li><a href="TeaPage.html">ACCESSORI</a></li>
-  <li><a href="TeaPage.html">REGALI</a></li>
+  <li><a href="tisane.jsp">TISANE</a></li>
+  <li><a href="accessori.jsp">ACCESSORI</a></li>
+  <li><a href="regali.jsp">REGALI</a></li>
 
 
   <ul class="user-interaction-box">
