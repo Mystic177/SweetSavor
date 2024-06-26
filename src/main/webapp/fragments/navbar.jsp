@@ -13,17 +13,9 @@
 
 <div class="nav-bar">
 <ul class="menu">
-  <li><a href="home.jsp">HOME</a></li>
-  <li class="has-submenu">
-    <a href="TeaPage.html">Te</a>
-    <div class="submenu">
-      <a href="#">Te' Nero</a>
-      <a href="#">Te' Verde</a>
-      <a href="#">Te' Esotici</a>
-    </div>
-  </li>
 
   <li><a href="TeaPage.html">CIOCCOLATA</a></li>
+  <li><a href="te.jsp">TÉ</a></li>
   <li><a href="TeaPage.html">TISANE</a></li>
   <li><a href="TeaPage.html">ACCESSORI</a></li>
   <li><a href="TeaPage.html">REGALI</a></li>
