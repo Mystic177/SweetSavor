@@ -24,10 +24,10 @@
         <div class="footer-section social">
             <h2>Follow Us</h2>
             <div class="social-icons">
-                <a href="#"><i class='bx bxl-facebook'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://x.com/" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://it.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
             </div>
         </div>
     </div>
