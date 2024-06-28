@@ -37,9 +37,6 @@ public class LoginServlet extends HttpServlet {
 
             // Hash della password
             String hashedPassword = hashPassword(password);
-
-            System.out.println("Email: " + email);
-            System.out.println("Hashed Password: " + hashedPassword);
             
             // Recupero dell'utente dal database
             User user = userDao.retrieveUser(email, password);

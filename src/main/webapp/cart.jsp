@@ -45,7 +45,7 @@
                 <p>Nome Prodotto: <%= prodotto.getDescrizione() %></p>
                 <p>Prezzo: €<%= prodotto.getPrezzo() %></p>
                 <div class="quantity">
-                    <label for="quantity">Quantità: <%= prodotto.getDisponibilità() %></label>
+                    <label for="quantity">Quantità: <%= prodotto.getDisponibility() %></label>
                     <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
                 </div>
                 <p class="availability">Disponibilità: <span class="in-stock">In Stock</span> <i id="check-i" class="fa-solid fa-check"></i></p>

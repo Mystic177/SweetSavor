@@ -4,9 +4,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>SweetSavor</title>
         <meta name="viewport" content="initial-scale=1, width=device-width">
-        <link rel="stylesheet" href="./CSS/home.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
@@ -30,43 +29,14 @@
 
                 <div class="image-container">
                     <!-- Far combaciare la tisana con la pagina del prodotto -->
-                    <a href="paginatisane"><img src="tisana (1).png" class="productImage"></a>
-                    <a href="paginatisane"><img src="tisana (2).png" class="productImage"></a>
-                    <a href="paginatisane"><img src="tisana (3).png" class="productImage"></a>
+                    <a href="paginatisane"><img src="./img/tisana (1).png" class="productImage"></a>
+                    <a href="paginatisane"><img src="./img/tisana (2).png" class="productImage"></a>
+                    <a href="paginatisane"><img src="./img/tisana (3).png" class="productImage"></a>
                     
                 </div>
 
-
-
                 </div>
             </div>
-
-        <div class="home-container">
-            <div class="rows-box">
-                <!-- row1 -->
-                <div class="rows-1">
-                    <div class="image-container">
-                        <!-- Far combaciare la tisana con la pagina del prodotto -->
-                        <a href="paginatisane"><img src="tisana (1).png" class="productImage"></a>
-                        <a href="paginatisane"><img src="tisana (2).png" class="productImage"></a>
-                        <a href="paginatisane"><img src="tisana (3).png" class="productImage"></a>
-                        
-                    </div>
-                </div>
-                <!-- row2  -->
-                <div class="rows-1">
-                    <div class="image-container">
-                        <!-- Far combaciare la tisana con la pagina del prodotto -->
-                        <a href="paginatisane"><img src="tisana (1).png" class="productImage"></a>
-                        <a href="paginatisane"><img src="tisana (2).png" class="productImage"></a>
-                        <a href="paginatisane"><img src="tisana (3).png" class="productImage"></a>
-                        
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
 
 
     <%@include file="./fragments/footer.jsp" %>

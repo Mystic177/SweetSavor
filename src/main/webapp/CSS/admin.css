@@ -1,3 +1,5 @@
+/* admin.css */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #FAEDCD;
@@ -62,7 +64,7 @@ body {
     margin-bottom: 5px;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,.form-group textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -90,9 +92,17 @@ body {
     background-color: #424242;
 }
 
-#file-name {
+.file-name {
     display: inline-block;
     margin-left: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.file-name::before {
+    content: "Seleziona file: ";
+    font-size: 16px;
+    color: #333;
 }
 
 /* Media query per la barra laterale responsive */

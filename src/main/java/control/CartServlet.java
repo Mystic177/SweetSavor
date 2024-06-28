@@ -20,9 +20,7 @@ public class CartServlet extends HttpServlet {
             cart = new Cart();
             request.getSession().setAttribute("cart", cart);
         }
-
-        Prodotto prodotto = new Prodotto("T-shirt blu", 29.99, 50, true, "ABC Fashion", "Abbigliamento", "chocolate.png");
-        cart.addprodotto(prodotto);
+        
 
         response.sendRedirect("cart.jsp");
     }

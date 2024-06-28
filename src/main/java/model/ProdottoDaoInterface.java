@@ -10,9 +10,9 @@ public interface ProdottoDaoInterface {
     public boolean doDelete(int idProdotto) throws SQLException;
 
 
-    public Prodotto doRetrieveByKey(int idProdotto) throws SQLException;
+    public Prodotto doRetrieveByName(String name) throws SQLException;
 
-    public ArrayList<Prodotto> doRetrieveAll(String order) throws SQLException;
+    public ArrayList<Prodotto> doRetrieveAll() throws SQLException;
 
     public void doUpdateQnt(int id, int qnt) throws SQLException;
 
