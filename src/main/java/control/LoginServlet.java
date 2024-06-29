@@ -4,6 +4,7 @@ import model.User;
 import model.UserDao;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.servlet.ServletException;
@@ -15,7 +16,6 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
-  
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
@@ -23,23 +23,29 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDao userDao = new UserDao();
-        
-        
+
         try {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
 
             // Verifica se email e password sono presenti
             if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
-                response.sendRedirect(request.getContextPath() + "/login.jsp?error=missing_credentials");
-                return;
+                PrintWriter out = response.getWriter();
+                //script javascript in caso di errore 
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Completare tutti i campi');");
+                out.println("</script>");
+                response.sendRedirect(request.getContextPath() + "/login.jsp");
+                return; // Esce dal metodo doPost
             }
+
+
 
             // Hash della password
             String hashedPassword = hashPassword(password);
-            
+
             // Recupero dell'utente dal database
-            User user = userDao.retrieveUser(email, password);
+            User user = userDao.retrieveUser(email, hashedPassword);
 
             // Verifica se l'utente esiste nel database
             if (user != null) {

@@ -4,14 +4,18 @@ import model.Prodotto;
 import model.ProdottoDao;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Collection;
 
 @WebServlet("/addProduct")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
 public class AdminAddProductServlet extends HttpServlet {
 
     private ProdottoDao prodottoDao;
@@ -30,23 +34,41 @@ public class AdminAddProductServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getParts() != null && request.getParts().size() > 0) {
-            String nome = request.getParameter("nome");
+        // Ottiene tutte le parti dalla richiesta
+        Collection<Part> parts = request.getParts();
+
+        if (!parts.isEmpty()) {
+            // Estrae i dati dal form
+            String nome = request.getParameter("nomeProdotto");
             String descrizione = request.getParameter("descrizione");
             double prezzo = Double.parseDouble(request.getParameter("prezzo"));
             int disponibilita = Integer.parseInt(request.getParameter("disponibilita"));
-            boolean disponibile = Boolean.parseBoolean(request.getParameter("disponibile"));
             String categoria = request.getParameter("categoria");
-            byte[] img = request.getParameter("imgUrl").getBytes();
 
-            Prodotto prodotto = new Prodotto(nome, descrizione, prezzo, disponibilita, disponibile, categoria, img);
+            byte[] image = null;
+
+            // Elabora ogni parte (assumendo un solo caricamento di file con nome "img")
+            for (Part part : parts) {
+                if (part.getName().equals("img")) {
+                    // Legge i byte dall'input stream della parte
+                    image = part.getInputStream().readAllBytes();
+                    break; // Supponendo un solo caricamento di file
+                }
+            }
+
+            Prodotto prodotto = new Prodotto(nome, descrizione, prezzo, disponibilita, true, categoria, image);
 
             try {
+                // Salva il prodotto usando il DAO
                 prodottoDao.doSave(prodotto);
-                response.sendRedirect(request.getContextPath() + "/admin/dashboard");
+                response.sendRedirect(request.getContextPath() + "/success.jsp");
             } catch (SQLException e) {
+                response.sendRedirect(request.getContextPath() + "/errorPage.jsp");
                 throw new ServletException("Errore durante l'aggiunta del prodotto", e);
+                
             }
+        } else {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Nessun file caricato o dati del form mancanti");
         }
     }
 }

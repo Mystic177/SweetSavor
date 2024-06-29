@@ -16,7 +16,7 @@ public class ProdottoDao implements ProdottoDaoInterface {
     
     @Override
     public void doSave(Prodotto prodotto) throws SQLException {
-        String sql = "INSERT INTO Prodotto (nome,descrizione, prezzo, disponibilita, disponibile, venditore, categoria, imgUrl) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Prodotto (nome,descrizione, prezzo, disponibilita, disponibile, categoria, imgUrl) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1,prodotto.getNomeProdotto());

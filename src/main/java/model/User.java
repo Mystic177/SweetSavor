@@ -10,32 +10,22 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private String userID;
     private boolean admin;
             //ID univoco per ogni cliente
 
     
     
-    public User(String username, String password, String email, String userID) {
+    public User(String username, String password, String email,boolean admin)  {
         this.username = username;
         this.password = hashPassword(password);//hashing pw
         this.email = email;
-        this.userID = userID;
-        //Creazione ID
+        this.admin = admin;
     }
 
     public User() {
         
     }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
+    
     public String getUsername() {
         return username;
     }
@@ -83,14 +73,6 @@ public class User {
         }
         return hashString;
     }
-
-    //da rimuovere?
-    public boolean loggedIn(){
-        if(this.username.equals("admin") && this.password.equals("admin")){
-            return true;
-        } else {
-            return false;
-        }
-    }
+    
 }   
 

@@ -22,7 +22,7 @@
 
 
   <ul class="user-interaction-box">
-    <li><a href="login.jsp"><i class='bx bxs-user' id="accBox"></i></a></li>
+    <li><a href="login.jsp">Login<i class='bx bxs-user' id="accBox"></i></a></li>
 
     <div class="searchBarBox">
       <input type="text" placeholder="Ricerca" class="searchBar">

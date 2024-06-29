@@ -24,14 +24,13 @@ public class UserDao implements UserDaoInterface<User> {
 
     @Override
     public void doSave(User user) throws SQLException {
-        String sql = "INSERT INTO users (username, password, email, userID, admin) VALUES (?, ?, ?, ?, ?)";
-
+        String sql = "INSERT INTO users (username, password, emai, admin) VALUES (?, ?, ?, ?)";
+    
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, user.getUsername());
-            stmt.setString(2, user.getPassword());
+            stmt.setString(2, hashPassword(user.getPassword()));
             stmt.setString(3, user.getEmail());
-            stmt.setString(4, user.getUserID());
-            stmt.setBoolean(5, user.isAmministratore());
+            stmt.setBoolean(4, user.isAmministratore());
             stmt.executeUpdate(); // Usiamo executeUpdate() per eseguire l'inserimento
         }
     }
@@ -41,7 +40,7 @@ public class UserDao implements UserDaoInterface<User> {
         String sql = "DELETE FROM users WHERE userID = ?";
 
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, user.getUserID());
+            stmt.setString(1, user.getEmail());
             int rowsAffected = stmt.executeUpdate();
             return rowsAffected > 0;
         }
@@ -59,12 +58,16 @@ public class UserDao implements UserDaoInterface<User> {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
+                String hashedPassword = hashPassword(password);
+                String storedPassword = rs.getString("password");
+                
+                if (storedPassword.equals(hashedPassword)) {
                 user = new User();
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
-                user.setUserID(rs.getString("userID"));
                 user.setAmministratore(rs.getBoolean("admin"));
+                }
             }
         }
         return user;
@@ -82,7 +85,6 @@ public class UserDao implements UserDaoInterface<User> {
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
-                user.setUserID(rs.getString("userID"));
                 user.setAmministratore(rs.getBoolean("admin"));
                 userList.add(user);
             }

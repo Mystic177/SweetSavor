@@ -43,10 +43,8 @@ public class RegistrationServlet extends HttpServlet {
             return; // Esce dal metodo doPost
         }
 
-        String userID = UUID.randomUUID().toString();
-        User user = new User(nome, password, email, userID); // Assumi isAdmin a false
+        User user = new User(nome, password, email, false); // Assumi isAdmin a false
         user.setUsername(username);
-        user.setAmministratore(false);
 
         try {
             userDao.doSave(user);
@@ -54,7 +52,7 @@ public class RegistrationServlet extends HttpServlet {
         } catch (SQLException e) {
             PrintWriter out = response.getWriter();
             out.println("<script type=\"text/javascript\">");
-            out.println("alert('Registration failed');");
+            out.println("alert('Registrazione fallita');");
             out.println("</script>");
             e.printStackTrace();
         }

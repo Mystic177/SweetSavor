@@ -1,25 +1,32 @@
-// admin.js
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Carica la sezione di default
     loadSection('jsp/addProduct.jsp');
 
     // Gestisce il clic sui link della sidebar
-    $('.sidebar-link').on('click', function(e) {
-        e.preventDefault();
-        var url = $(this).data('url');
-        loadSection(url);
+    document.querySelectorAll('.sidebar-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = this.getAttribute('data-url');
+            loadSection(url);
+        });
     });
 });
 
 function loadSection(url) {
-    $.ajax({
-        url: url,
-        type: 'GET',
-        success: function(response) {
-            $('#content').html(response);
-        },
-        error: function(xhr, status, error) {
-            console.error('Errore caricamento:', error);
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('content').innerHTML = xhr.responseText;
+        } else {
+            console.error('Errore caricamento:', xhr.statusText);
         }
-    });
+    };
+
+    xhr.onerror = function() {
+        console.error('Errore caricamento:', xhr.statusText);
+    };
+
+    xhr.send();
 }
