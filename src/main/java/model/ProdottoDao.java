@@ -9,6 +9,14 @@ public class ProdottoDao implements ProdottoDaoInterface {
     private String dbUser = "root";
     private String dbPassword = "root";
 
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     // Metodo privato per ottenere la connessione al database
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(jdbcURL, dbUser, dbPassword);

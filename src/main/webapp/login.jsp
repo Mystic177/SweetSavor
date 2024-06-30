@@ -10,6 +10,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+<script src="Javascript/commands.js"></script>
 
 <header>
     <img id="cup" src="./img/SweetSavor.png">
@@ -18,7 +19,7 @@
 <div class="container">
     <h1>Accedi</h1>
 
-    <form action="loginServlet" method="post">
+    <form action="<%= request.getContextPath() %>/loginServlet" method="post" onsubmit="validateLoginForm()">
 
         <div class="mailInput">
             <input type="text" placeholder="Email" id="email" name="email"> <!-- Aggiunto name="email" -->

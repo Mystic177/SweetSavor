@@ -11,6 +11,7 @@
 </head>
 <body>
 
+<script src="Javascript/commands.js"></script>
 <header>
     <img id="cup" src="./img/SweetSavor.png">
 </header>
@@ -19,7 +20,7 @@
     <h1>Registrati</h1>
 
     
-    <form action="register" method="post" >
+    <form action="register" method="post" onsubmit="validateRegistrationForm()">
         <div class="nameInput">
             <input type="text" placeholder="Nome" id="username" name="username" required>
             <i class='bx bxs-user'></i>

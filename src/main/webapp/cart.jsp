@@ -39,7 +39,7 @@
         <h2>Carrello</h2>
         <div class="product-item">
             <div class="image-box">
-                <img src="<%= prodotto.getImgUrl() %>" height="100">
+                <img src="<%= prodotto.getImg() %>" height="100">
             </div>
             <div class="product-info">
                 <p>Nome Prodotto: <%= prodotto.getDescrizione() %></p>

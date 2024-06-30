@@ -20,10 +20,28 @@ function createXMLHttprequest(){
 }
 
 
-//funzione per la ricerca sul sito
-function ricercaOggetti(){
-    var input = document.getElementById("search-bar-id");
 
-    alert("suca");
-    
+function validateRegistrationForm() {
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (email.trim() === '' && password.trim() === '' && username.trim() === '') {
+        alert("Completare tutti i campi");
+        return false; // Non inviare la richiesta
+    }
+
+    return true; // Invia la richiesta POST
+}
+
+function validateLoginForm() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (email.trim() === '' || password.trim() === '') {
+        alert("Completare tutti i campi");
+        return false; // Non inviare la richiesta
+    }
+
+    return true; // Invia la richiesta POST
 }

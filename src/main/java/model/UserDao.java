@@ -17,21 +17,35 @@ public class UserDao implements UserDaoInterface<User> {
     private String dbUser = "root";
     private String dbPassword = "root";
 
+
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    
     // Metodo privato per ottenere la connessione al database
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
     }
+    
 
+    
+    
     @Override
     public void doSave(User user) throws SQLException {
-        String sql = "INSERT INTO users (username, password, emai, admin) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO users (username, password, email, admin) VALUES (?, ?, ?, ?)";
     
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, user.getUsername());
-            stmt.setString(2, hashPassword(user.getPassword()));
+            stmt.setString(2, user.getPassword());
             stmt.setString(3, user.getEmail());
             stmt.setBoolean(4, user.isAmministratore());
             stmt.executeUpdate(); // Usiamo executeUpdate() per eseguire l'inserimento
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -53,27 +67,24 @@ public class UserDao implements UserDaoInterface<User> {
 
         try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, email);
-            stmt.setString(2, password); 
+            stmt.setString(2, password); // Confronta con la password crittografata nel database
 
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String hashedPassword = hashPassword(password);
-                String storedPassword = rs.getString("password");
-                
-                if (storedPassword.equals(hashedPassword)) {
                 user = new User();
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
                 user.setAmministratore(rs.getBoolean("admin"));
-                }
             }
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
         }
         return user;
     }
-    
-    
+
+
     @Override
     public List<User> retrieveAll() throws SQLException {
         List<User> userList = new ArrayList<>();
@@ -92,24 +103,5 @@ public class UserDao implements UserDaoInterface<User> {
         return userList;
     }
 
-
-
-    private String hashPassword(String password) {
-        if (password == null) {
-            throw new IllegalArgumentException("Password cannot be null");
-        }
-        
-        String hashString = null;
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-512");
-            byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
-            hashString = "";
-            for (int i = 0; i < hash.length; i++) {
-                hashString += Integer.toString((hash[i] & 0xff) | 0x100, 16).substring(1,3);
-            }
-        } catch (NoSuchAlgorithmException e){
-            e.printStackTrace();
-        }
-        return hashString;
-    }
+  
 }
