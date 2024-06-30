@@ -5,10 +5,10 @@
 <html>
 <head>
     <title>SweetSavor</title>
-    <link rel="stylesheet" type="text/css" href="CSS/home.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/home.css">
 </head>
 <body>
-<%@ include file="./fragments/navbar.jsp" %>
+<%@ include file="../fragments/navbar.jsp" %>
 
 <%
     ArrayList<Prodotto> listaProdotti = (ArrayList<Prodotto>) request.getAttribute("prodotti");
@@ -35,9 +35,9 @@
     }
 %>
 
-<%@ include file="./fragments/footer.jsp" %>
+<%@ include file="../fragments/footer.jsp" %>
 <style>
-    <%@ include file="./CSS/home.css" %>
+    <%@ include file="../CSS/home.css" %>
 </style>
 </body>
 </html>

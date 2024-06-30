@@ -45,3 +45,31 @@ function validateLoginForm() {
 
     return true; // Invia la richiesta POST
 }
+
+
+
+//funzione  per addToCart
+function addToCart() {
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll('.add-to-cart');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.closest('.product-item').getAttribute('data-id');
+                fetch('../AddToCart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `productId=${productId}`
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        alert('Prodotto aggiunto al carrello');
+                    })
+                    .catch(error => {
+                        console.error('Errore:', error);
+                    });
+            });
+        });
+    });
+}

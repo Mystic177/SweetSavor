@@ -10,7 +10,7 @@
     </head>
     <body>
     
-            <%@include file="./fragments/navbar.jsp" %>
+            <%@include file="./fragments/header.jsp" %>
         <style><%@include file="./CSS/home.css"%></style>
             
             <!-- Container home -->
