@@ -2,11 +2,12 @@
 <html>
 <head>
   <meta name="viewport" content="initial-scale=1, width=device-width">
+  <link rel="stylesheet" href="/CSS/fragments.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <header>
-    <img id="cup" src="../img/SweetSavor.png">
+    <img id="cup" src="/img/SweetSavor.png">
   </header>
   
 <div class="nav-bar">

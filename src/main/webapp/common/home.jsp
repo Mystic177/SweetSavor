@@ -5,12 +5,14 @@
     <head>
         <title>SweetSavor</title>
         <meta name="viewport" content="initial-scale=1, width=device-width">
-        <link rel="stylesheet" href="../CSS/home.css">
+        <link rel="stylesheet" href="/CSS/home.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
     
             <%@include file="/fragments/header.jsp" %>
+            <style><%@include file="/CSS/fragments.css" %></style>
+            
            
             <!-- Container home 
                String productLink = request.getContextPath() + "/prodotto.jsp?name=" + URLEncoder.encode(prodotto.getNomeProdotto(), "UTF-8");-->
