@@ -13,9 +13,9 @@ public class OrdineDAO implements OrdineDAOInterface {
 
     protected Connection getConnection() {
         // Assicurati di sostituire queste variabili con le tue impostazioni del database
-        String jdbcURL = "jdbc:mysql://localhost:3306/tuo_database";
-        String jdbcUsername = "username";
-        String jdbcPassword = "password";
+        String jdbcURL = "jdbc:mysql://localhost:3306/SweetSavor";
+        String jdbcUsername = "root";
+        String jdbcPassword = "root";
 
         Connection connection = null;
         try {
