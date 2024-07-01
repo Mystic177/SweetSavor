@@ -8,7 +8,7 @@
     <title>Checkout</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link rel="stylesheet" href="./CSS/checkout.css">
+    <link rel="stylesheet" href="../CSS/checkout.css">
 </head>
 <body>
 <script src="checkout.js"></script>
@@ -31,13 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="address">Indirizzo:</label>
-                <!-- <div class="indirizzo">
-                    <input type="text" placeholder="Indirizzo" id="address" name="address" required>
-                 
-                </div> -->
-        
                 <input type="text" id="address" name="address" required>
-                <i class='bx bxs-map'></i>
             </div>
             <div class="form-group">
                 <label for="city">Città:</label>
@@ -96,8 +90,8 @@
     </div>
 </div>
 
-<%@ include file="./fragments/footer.jsp" %>
-<style><%@ include file="./CSS/home.css" %></style>
+<%@ include file="../fragments/footer.jsp" %>
+<style><%@ include file="../CSS/home.css" %></style>
 
 </body>
 </html>

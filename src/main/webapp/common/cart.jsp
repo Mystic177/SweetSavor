@@ -8,10 +8,10 @@
     <title>Carrello</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link rel="stylesheet" href="./CSS/cart.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
 </head>
 <body>
-<script src="Javascript/cart.js"></script>
+<script src="../Javascript/cart.js"></script>
 <!-- Cart cart = (Cart) request.getSession().getAttribute("cart");-->
 <%    
     Cart cart1 = new Cart();
@@ -79,8 +79,8 @@
     }
 %>
 
-<%@ include file="./fragments/footer.jsp" %>
-<style><%@ include file="./CSS/home.css" %></style>
+<%@ include file="../fragments/footer.jsp" %>
+<style><%@ include file="../CSS/home.css" %></style>
 
 </body>
 </html>

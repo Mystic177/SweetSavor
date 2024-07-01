@@ -6,14 +6,14 @@
     <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<script src="Javascript/commands.js"></script>
+<script src="../Javascript/commands.js"></script>
 
 <header>
-    <img id="cup" src="./img/SweetSavor.png">
+    <img id="cup" src="../img/SweetSavor.png">
 </header>
 
 <div class="container">
@@ -32,7 +32,7 @@
         </div>
 
         <div class="not-registered">
-            <p>Non hai un account? <a href="<%= request.getContextPath() %>/registration.jsp">Registrati </a></p>
+            <p>Non hai un account? <a href="<%= request.getContextPath() %>/common/registration.jspion.jsp">Registrati </a></p>
         </div>
 
         <button type="submit" class="btn">Accedi</button>

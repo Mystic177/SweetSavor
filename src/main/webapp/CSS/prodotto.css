@@ -16,7 +16,6 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* background-color: #fff;
      */
-
     background-color: #FAEDCD;
     border-top: 1px solid black;
     border-left: 1px solid black;
@@ -105,7 +104,7 @@ body{
 #buy-button:hover {
     background-color: #fce4a7;
     color: black;
-    transform: scale(1.1);    
+    transform: scale(1.1);
 }
 
 

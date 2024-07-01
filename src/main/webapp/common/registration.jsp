@@ -6,14 +6,14 @@
     <title>Registrati</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/registration.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/registration.css" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
-<script src="Javascript/commands.js"></script>
+<script src="../Javascript/commands.js"></script>
 <header>
-    <img id="cup" src="./img/SweetSavor.png">
+    <img id="cup" src="../img/SweetSavor.png">
 </header>
 
 <div class="container">

@@ -44,9 +44,9 @@ public class LoginServlet extends HttpServlet {
                 } else {
                     String checkout = request.getParameter("checkout");
                     if ("true".equals(checkout)) {
-                        response.sendRedirect(request.getContextPath() + "/checkout.jsp");
+                        response.sendRedirect(request.getContextPath() + "/common/checkout.jsp");
                     } else {
-                        response.sendRedirect(request.getContextPath() + "/home.jsp");
+                        response.sendRedirect(request.getContextPath() + "/common/home.jsp");
                     }
                 }
             } else {
