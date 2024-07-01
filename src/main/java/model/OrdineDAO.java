@@ -118,7 +118,7 @@ public class OrdineDAO implements OrdineDAOInterface {
             statement.setBoolean(7, ordine.isStato());
             statement.setString(8, ordine.getOrderID());
             rowUpdated = statement.executeUpdate() > 0;
+            return rowUpdated;
         }
-        return rowUpdated;
     }
 }
