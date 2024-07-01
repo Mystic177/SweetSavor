@@ -15,9 +15,9 @@
 <div class="nav-bar">
 <ul class="menu">
   <li><a href=../common/home.jsp">HOME</a></li>
-  <li><a href="#">T&Egrave</a></li>
+  <li><a href="../categorie/te.jsp">T&Egrave</a></li>
   <li><a href="../categorie/cioccolate.jsp">CIOCCOLATA</a></li>
-  <li><a href="../categorie/result.jsp">TISANE</a></li>
+  <li><a href="../categorie/tisane.jsp.jsp">TISANE</a></li>
   <li><a href="../common/accessori.jsp">ACCESSORI</a></li>
   <li><a href="../categorie/regali.jsp">REGALI</a></li>
 
