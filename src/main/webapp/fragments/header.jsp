@@ -14,12 +14,12 @@
   
 <div class="nav-bar">
 <ul class="menu">
-  <li><a href=./common/home.jsp">HOME</a></li>
+  <li><a href=../common/home.jsp">HOME</a></li>
   <li><a href="#">T&Egrave</a></li>
-  <li><a href="./categorie/cioccolate.jsp">CIOCCOLATA</a></li>
-  <li><a href="./categorie/result.jsp.jsp">TISANE</a></li>
-  <li><a href="TeaPage.html">ACCESSORI</a></li>
-  <li><a href="./categorie/regali.jsp">REGALI</a></li>
+  <li><a href="../categorie/cioccolate.jsp">CIOCCOLATA</a></li>
+  <li><a href="../categorie/result.jsp">TISANE</a></li>
+  <li><a href="../common/accessori.jsp">ACCESSORI</a></li>
+  <li><a href="../categorie/regali.jsp">REGALI</a></li>
 
 
   <ul class="user-interaction-box">
