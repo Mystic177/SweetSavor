@@ -6,7 +6,10 @@ body {
     padding: 50px 50px;
 }
 
-
+a{
+    text-decoration: none;
+    color: black;
+}
 
 /* Main content */
 .main-page {
@@ -36,6 +39,7 @@ body {
     height: auto;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .main-product-item p.main-product-name,

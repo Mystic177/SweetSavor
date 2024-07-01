@@ -48,10 +48,6 @@ h1, p {
 }
 
 
-img{
-    display: block ;
-    max-width: 100%;
-}
 /* Stile per il contenitore delle immagini */
 .image-container {
     margin: 50px;
@@ -108,3 +104,4 @@ img{
 .product-box + .product-box {
     margin-left: 20px;
 }
+

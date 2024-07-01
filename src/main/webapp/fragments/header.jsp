@@ -7,7 +7,9 @@
 </head>
 <body>
   <header>
-    <img id="cup" src="/img/SweetSavor.png">
+    <div class="logo-container">
+    <img id="cup" src="../img/SweetSavor.png" width="150">
+    </div>
   </header>
   
 <div class="nav-bar">
