@@ -19,6 +19,7 @@
 <%@ include file="/fragments/header.jsp" %>
 <style><%@ include file="/CSS/home.css" %></style>
 <main>
+    <h1 class="home-header">Scopri la nostra vasta selezione di tè!</h1>
     <div class="home-container">
         <!-- Showcase prodotti -->
         <%
@@ -26,7 +27,7 @@
             ProdottoDao prodottoDao = new ProdottoDao();
 
             try {
-                lista = prodottoDao.doRetrieveAll(); // Recupera tutti i prodotti
+                lista = prodottoDao.doRetrieveByCategoria("te"); // Recupera tutti i prodotti
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -30,7 +30,7 @@
             
 
             try {
-                lista = prodottoDao.doRetrieveByCategoria(categoriaDesiderata); // Recupera tutti i prodotti
+                lista = prodottoDao.doRetrieveByCategoria("cioccolata"); // Recupera tutti i prodotti
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -26,7 +26,7 @@
             ProdottoDao prodottoDao = new ProdottoDao();
 
             try {
-                lista = prodottoDao.doRetrieveByCategoria("regali"); // Recupera tutti i prodotti
+                lista = prodottoDao.doRetrieveByCategoria("accessori"); // Recupera tutti i prodotti
             } catch (Exception e) {
                 e.printStackTrace();
             }
