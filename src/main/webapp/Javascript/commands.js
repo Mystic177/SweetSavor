@@ -73,3 +73,16 @@ function addToCart() {
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const basePath = "<%= request.getContextPath() %>/prodotto.jsp?nome=";
+    document.querySelectorAll('.main-product-item').forEach(item => {
+        const productName = item.getAttribute('data-nome');
+        const productLink = item.querySelector('.main-product-link');
+        productLink.href = basePath + encodeURIComponent(productName);
+        productLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Previene il comportamento predefinito del link
+            window.location.href = productLink.href; // Reindirizza alla pagina del prodotto
+        });
+    });
+});

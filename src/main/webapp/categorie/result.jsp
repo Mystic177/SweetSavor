@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS/home.css">
 </head>
 <body>
-<%@ include file="../fragments/navbar.jsp" %>
+<%@ include file="../fragments/header.jsp" %>
 
 <%
     ArrayList<Prodotto> listaProdotti = (ArrayList<Prodotto>) request.getAttribute("prodotti");

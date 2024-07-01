@@ -11,6 +11,8 @@
     <body>
     
             <%@include file="/fragments/header.jsp" %>
+            <style><%@include file="/CSS/fragments.css" %></style>
+            
            
             <!-- Container home 
                String productLink = request.getContextPath() + "/prodotto.jsp?name=" + URLEncoder.encode(prodotto.getNomeProdotto(), "UTF-8");-->

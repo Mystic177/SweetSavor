@@ -33,10 +33,11 @@
         <div class="form-group">
             <label for="productCategory">Categoria Prodotto:</label>
             <select id="productCategory" name="categoria" required>
-                <option value="051">Cioccolata</option>
-                <option value="052">Tisana</option>
-                <option value="053">Tè</option>
-                <option value="054">Regalo</option>
+                <option value="cioccolata">Cioccolata</option>
+                <option value="tisana">Tisana</option>
+                <option value="te">Tè</option>
+                <option value="regalo">Regalo</option>
+                <option value="accessori">Accessori</option>
             </select>
         </div>
         <div class="form-group">

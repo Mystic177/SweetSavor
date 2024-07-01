@@ -11,16 +11,14 @@
     <script src="https://kit.fontawesome.com/54779b1c8e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<%@ include file="../fragments/navbar.jsp" %>
+<%@ include file="../fragments/header.jsp" %>
 <style><%@ include file="../CSS/home.css" %></style>
 <script src="../Javascript/commands.js"></script>
 
 <div class="product-main-box">
-
     <div class="grid-product-box">
-
         <%
-            String productName = (String) request.getSession().getAttribute("nome");
+            String productName = request.getParameter("nome");
             if (productName == null || productName.trim().isEmpty()) {
         %>
         <p>Nessun nome prodotto specificato.</p>
@@ -32,8 +30,8 @@
             try {
                 prodotto = prodottoDao.doRetrieveByName(productName);
             } catch (Exception e) {
-                // Gestione dell'errore: stampa l'errore o reindirizza a una pagina di errore
-                e.printStackTrace();  // Questo stampa l'errore nella console del server
+                // Gestione dell'errore
+                e.printStackTrace();  // Log dell'errore nel server
                 response.sendRedirect(request.getContextPath() + "/errorPage.jsp"); // Reindirizza a una pagina di errore
                 return; // Importante terminare l'esecuzione della pagina dopo il reindirizzamento
             }
@@ -51,7 +49,8 @@
             <div class="user-box">
                 <div class="product-description">
                     <p><%= prodotto.getNomeProdotto() %></p>
-                    <p><%= prodotto.getPrezzo() %>&euro;</p>
+                    <p><%= String.format("%.2f",prodotto.getPrezzo())%> &euro;</p>
+                        
                     <p>Ingredienti: <%= prodotto.getDescrizione() %></p>
                     <div class="quantity">
                         <label for="quantity">Quantità:</label>
@@ -78,10 +77,8 @@
         <%
             }
         %>
-
     </div>
 </div>
 <%@ include file="../fragments/footer.jsp" %>
-<style><%@ include file="../CSS/home.css"%></style>
 </body>
 </html>

@@ -2,7 +2,6 @@ package model;
 
 public class Ordine {
     private String orderID;
-    //OD
     private String dataOrdine;
     private String clientID;
     private double totale;
