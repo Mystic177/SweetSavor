@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.Ordine;
 
 public class OrdineDAO implements OrdineDAOInterface{
 
@@ -68,8 +69,8 @@ public class OrdineDAO implements OrdineDAOInterface{
         return ordine;
     }
 
-    public ArrayList<Ordine> selectAllOrdini() {
-        ArrayList<Ordine> ordini = new ArrayList<>();
+    public List<Ordine> selectAllOrdini() {
+        List<Ordine> ordini = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ORDINI)) {
             ResultSet rs = preparedStatement.executeQuery();
