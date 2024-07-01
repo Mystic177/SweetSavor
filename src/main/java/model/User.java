@@ -11,10 +11,7 @@ public class User {
     private String password;
     private String email;
     private boolean admin;
-            //ID univoco per ogni cliente
 
-    
-    
     public User(String username, String password, String email,boolean admin)  {
         this.username = username;
         this.password = hashPassword(password);//hashing pw
