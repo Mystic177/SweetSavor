@@ -21,6 +21,9 @@ public class AddToCartServlet extends HttpServlet {
 
         // Creazione dell'oggetto Prodotto con i dettagli ricevuti dalla richiesta
         Prodotto prodotto = new Prodotto();
+        prodotto.setNomeProdotto(productName);
+        prodotto.setPrezzo(Double.parseDouble(productPrice));
+        prodotto.setImg(productImage.getBytes());
 
         // Recupero o creazione del carrello dalla sessione dell'utente
         HttpSession session = request.getSession();
