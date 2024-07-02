@@ -50,29 +50,16 @@ function validateLoginForm() {
 
 //funzione  per addToCart
 function addToCart() {
-    document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll('.add-to-cart');
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.closest('.product-item').getAttribute('data-id');
-                fetch('../AddToCart', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: `productId=${productId}`
-                })
-                    .then(response => response.text())
-                    .then(data => {
-                        alert('Prodotto aggiunto al carrello');
-                    })
-                    .catch(error => {
-                        console.error('Errore:', error);
-                    });
-            });
-        });
-    });
+    // Ottenere la quantità selezionata dall'utente
+    var quantity = document.getElementById("buy-button").value;
+
+    // Impostare il valore della quantità nel campo del form
+    document.getElementById("buy-button").value = quantity;
+
+    // Invia il form
+    document.forms[0].submit(); // Assicurati che il form sia il primo nel tuo documento se hai più form
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const basePath = "<%= request.getContextPath() %>/prodotto.jsp?nome=";
