@@ -90,7 +90,6 @@
     </div>
 </div>
 
-<%@ include file="../fragments/footer.jsp" %>
 <style><%@ include file="../CSS/home.css" %></style>
 
 </body>
