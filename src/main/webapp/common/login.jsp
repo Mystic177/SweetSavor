@@ -11,9 +11,10 @@
 </head>
 <body>
 <header>
-    <img id="cup" src="../img/SweetSavor.png">
+    <img id="cup" src="../logo/SweetSavor.png">
 </header>
 
+<script src="/Javascript/control.js"></script>
 <div class="container">
     <h1>Accedi</h1>
 

@@ -13,6 +13,7 @@
 <body>
 <script src="checkout.js"></script>
 
+<script src="/Javascript/control.js"></script>
 <div class="checkout-container">
     <div class="checkout-form">
         <h2>Dettagli Utente</h2>

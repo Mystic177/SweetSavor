@@ -27,6 +27,7 @@
     <%
         if (listaProdotti != null && !listaProdotti.isEmpty()) {
     %>
+    <script src="/Javascript/control.js"></script>
     <div class="product-list" id="cart-list">
         <h2>Carrello</h2>
 

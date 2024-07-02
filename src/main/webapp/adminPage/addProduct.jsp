@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../CSS/admin.css">
 </head>
 <body>
+<script src="/Javascript/control.js"></script>
 <div class="card section">
     <h2>Aggiungi Prodotti</h2>
 

@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <%@include file="/fragments/header.jsp" %>
+    <style><%@include file="/CSS/fragments.css" %></style>
     <title>SweetSavor</title>
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="../CSS/productpage.css">
@@ -16,9 +18,6 @@
     <script src="/Javascript/commands.js"></script>
 </head>
 <body>
-
-<%@include file="/fragments/header.jsp" %>
-<style><%@include file="/CSS/fragments.css" %></style>
 
 <main class="main-page">
     <div class="main-home-container">
