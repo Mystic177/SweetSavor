@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/CSS/login.css" type="text/css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <script src="../Javascript/commands.js"></script>
 </head>
 <body>
 <header>
-    <img id="cup" src="../logo/SweetSavor.png">
+    <img id="cup" src="<%= request.getContextPath() %>/logo/SweetSavor.png">
 </header>
 
 <div class="container">
     <h1>Accedi</h1>
 
-    <form action="<%= request.getContextPath() %>/loginServlet" method="post" onsubmit="return validateLoginForm();">
+    <form action="<%= request.getContextPath() %>/LoginServlet" method="post" >
         <div class="mailInput">
             <input type="text" placeholder="Email" id="email" name="email">
             <i class='bx bxs-envelope'></i>
@@ -57,7 +56,7 @@
     </div>
 </div>
 
-<script src="/Javascript/control.js"></script> <!-- Sposta il tag script in fondo al body -->
+<script src="<%= request.getContextPath() %>/Javascript/control.js"></script> <!-- Sposta il tag script in fondo al body -->
 
 </body>
 </html>

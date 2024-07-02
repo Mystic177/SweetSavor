@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/loginServlet")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,15 +33,17 @@ public class LoginServlet extends HttpServlet {
             UserDao userDao = new UserDao();
             User user = userDao.retrieveUser(email, hashPassword(password));
 
+            System.out.println(hashPassword(password));
+            
             if (user != null && validatePassword(password, user.getPassword())) {
-                // Verifica se l'utente è amministratore
+                // Verifica se l'utente è un admin
                 if (user.isAmministratore()) {
-                    // Autenticazione riuscita per l'amministratore
+                    // Autenticazione riuscita per admin, reindirizza alla pagina admin.jsp
                     HttpSession session = request.getSession(true);
                     session.setAttribute("currentSessionUser", user);
                     response.sendRedirect(request.getContextPath() + "/adminPage/adminPage.jsp");
                 } else {
-                    // Autenticazione riuscita per l'utente normale
+                    // Autenticazione riuscita per utente non admin, reindirizza alla home page
                     HttpSession session = request.getSession(true);
                     session.setAttribute("currentSessionUser", user);
                     response.sendRedirect(request.getContextPath() + "/common/home.jsp");
@@ -67,14 +69,11 @@ public class LoginServlet extends HttpServlet {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-512");
             byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
-            StringBuilder hexString = new StringBuilder();
-            for (byte b : hash) {
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
+            hashString = "";
+            for (int i = 0; i < hash.length; i++) {
+                hashString += Integer.toString((hash[i] & 0xff) | 0x100, 16).substring(1, 3);
             }
-            hashString = hexString.toString();
-        } catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException e){
             e.printStackTrace();
         }
         return hashString;
