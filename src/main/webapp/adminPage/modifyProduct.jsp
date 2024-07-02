@@ -11,7 +11,7 @@
 <body>
 
 <div id="main" class="clear">
-    <h2>MODIFICA PRODOTTO</h2>
+    <h2>Modifica Prodotto</h2>
 
     <%
         ArrayList<Prodotto> prodotti = (ArrayList<Prodotto>) request.getSession().getAttribute("products");

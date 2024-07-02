@@ -14,4 +14,15 @@
     </resource-ref>
 
 
+    <!-- Definizione del filtro -->
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>control.LoginFilter</filter-class>
+    </filter>
+
+    <!-- Mappatura del filtro -->
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/common/login.jsp</url-pattern>
+    </filter-mapping>
 </web-app>

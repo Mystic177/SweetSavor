@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.io.PrintWriter;
 
 @WebServlet("/register")
 public class RegistrationServlet extends HttpServlet {
@@ -42,7 +42,7 @@ public class RegistrationServlet extends HttpServlet {
 
         try {
             userDao.doSave(user);
-            response.sendRedirect(request.getContextPath() + "/home.jsp");
+            response.sendRedirect(request.getContextPath() + "/common/home.jsp");
         } catch (SQLException e) {
             showError(response, "Registrazione fallita");
             e.printStackTrace();

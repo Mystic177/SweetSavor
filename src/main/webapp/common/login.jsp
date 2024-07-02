@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link rel="stylesheet" href="../CSS/login.css" type="text/css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <script src="../Javascript/commands.js"></script>
 </head>
 <body>
@@ -14,7 +14,6 @@
     <img id="cup" src="../logo/SweetSavor.png">
 </header>
 
-<script src="/Javascript/control.js"></script>
 <div class="container">
     <h1>Accedi</h1>
 
@@ -36,12 +35,10 @@
         <!-- Messaggio di errore -->
         <% String error = request.getParameter("error");
             if (error != null) {
-                if (error.equals("empty")) { %>
-        <p style="color: red;">Email e/o password vuoti.</p>
-        <% } else if (error.equals("invalid")) { %>
+                if (error.equals("invalid")) { %>
         <p style="color: red;">Credenziali non valide.</p>
         <% } else if (error.equals("db")) { %>
-        <p style="color: red;">Errore di database.</p>
+        <p style="color: red;">Errore di database. Riprova più tardi.</p>
         <% }
         } %>
 
@@ -59,5 +56,8 @@
         </button>
     </div>
 </div>
+
+<script src="/Javascript/control.js"></script> <!-- Sposta il tag script in fondo al body -->
+
 </body>
 </html>
