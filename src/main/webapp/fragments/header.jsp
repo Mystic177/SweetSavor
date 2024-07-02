@@ -24,10 +24,12 @@
 
 
   <ul class="user-interaction-box">
-    <li><a href="./login.jsp">Login<i class='bx bxs-user' id="accBox"></i></a></li>
+    <li><a href="<%= request.getContextPath() %>/common/login.jsp">Login<i class='bx bxs-user' id="accBox"></i></a></li>
+
+
 
     <div class="cart-icon">
-      <a href="/common/cart.jsp"><i class='bx bx-cart-add'></i></a>
+      <a href="<%= request.getContextPath() %>/common/cart.jsp"><i class='bx bx-cart-add'></i></a>
     </div>
 
   </ul>

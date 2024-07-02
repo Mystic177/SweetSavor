@@ -19,9 +19,9 @@
 <div class="container">
     <h1>Accedi</h1>
 
-    <form action="<%= request.getContextPath() %>/loginServlet" method="post" onsubmit="validateLoginForm()">
-
-        <div class="mailInput">
+    <form action="loginServlet" method="post" onsubmit="return validateLoginForm();">
+        
+    <div class="mailInput">
             <input type="text" placeholder="Email" id="email" name="email"> <!-- Aggiunto name="email" -->
             <i class='bx bxs-envelope'></i>
         </div>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="not-registered">
-            <p>Non hai un account? <a href="<%= request.getContextPath() %>/common/registration.jspion.jsp">Registrati </a></p>
+            <p>Non hai un account? <a href="<%= request.getContextPath() %>/common/registration.jsp">Registrati </a></p>
         </div>
 
         <button type="submit" class="btn">Accedi</button>
