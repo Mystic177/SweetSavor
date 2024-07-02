@@ -19,7 +19,7 @@
         <a href="modifyProduct.jsp" class="sidebar-link" data-url="modifyProduct.jsp">Modifica Prodotti</a>
         <a href="currentProducts.jsp" class="sidebar-link" data-url="currentProducts.jsp">Prodotti Presenti</a>
         <a href="deleteProduct.jsp" class="sidebar-link" data-url="deleteProduct.jsp">Elimina Prodotti</a>
-        <a><button onclick="logout()">Logout</button></a>
+        <a href="<%= request.getContextPath() %>/LogoutServlet"><button onclick="logout()">Logout</button></a>
     </div>
     <div class="main" id="content">
         <!-- parte dove viente caricato il  contenuto dinamico -->
