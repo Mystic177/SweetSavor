@@ -1,4 +1,5 @@
 <%@ page import="model.Prodotto" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,10 +9,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="../CSS/cart.css">
     <script src="../Javascript/cart.js" defer></script>
-    <script src="../Javascript/admin.js" defer></script> <!-- Importa admin.js come file esterno -->
-    <style>
-        /* Stili CSS aggiuntivi possono essere inclusi qui */
-    </style>
+    <%@ include file="../fragments/header.jsp" %>
 </head>
 <body>
 
@@ -20,7 +18,6 @@
     ArrayList<Prodotto> listaProdotti = (ArrayList<Prodotto>) request.getAttribute("listaProdotti");
     Integer totalProdotti = (Integer) request.getAttribute("totalProdotti");
     Double totalImporto = (Double) request.getAttribute("totalImporto");
-    String message = (String) request.getAttribute("message");
 %>
 
 <div class="cart-container">
@@ -42,8 +39,7 @@
                     <p>Prezzo: €<%= listaProdotti.get(i).getPrezzo() %></p>
                     <div class="quantity">
                         <label for="quantity_<%= i %>">Quantità:</label>
-                        <input type="number" id="quantity_<%= i %>" name="quantity" class="quantity-input" value="<%= listaProdotti.get(i).getQuantita() %>" min="1" max="10" data-index="<%= i %>">
-                        <input type="hidden" name="productId" value="<%= listaProdotti.get(i).getId() %>">
+                        <input type="number" id="quantity_<%= i %>" name="quantity" class="quantity-input" value="<%= listaProdotti.get(i).getDisponibility() %>" min="1" max="10" data-index="<%= i %>">
                     </div>
                     <p class="availability">Disponibilità: <span class="in-stock">In Stock</span> <i id="check-i" class="fa-solid fa-check"></i></p>
                     <button type="button" class="remove-button" onclick="removeProduct(this)">Rimuovi</button>
@@ -64,12 +60,12 @@
         </div>
     </div>
     <% } else { %>
-    <p><%= message %></p>
+    <p> Il carrello è vuoto.</p>
     <% } %>
 </div>
 
 <%@ include file="../fragments/footer.jsp" %>
-<style><%@ include file="../CSS/home.css" %></style>
+<style><%@ include file="../CSS/fragments.css" %></style>
 
 <script src="/Javascript/cart.js" >
 
