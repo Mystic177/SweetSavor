@@ -10,7 +10,7 @@ body {
 .header {
     background-color: #E6CCB2;
     color: rgb(0, 0, 0);
-    padding: 1rem;
+    padding: 20px 0;
     text-align: center;
     position: relative;
 }
@@ -21,12 +21,12 @@ body {
 }
 
 .sidebar {
-    width: 250px;
+    width: 25%;
     background-color: #E6CCB2;
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
-    height: 100%;
+    height: 100vh; /* 100% viewport height */
     transition: transform 0.3s ease;
 }
 
@@ -64,7 +64,8 @@ body {
     margin-bottom: 5px;
 }
 
-.form-group input,.form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -108,22 +109,55 @@ body {
 /* Media query per la barra laterale responsive */
 @media (max-width: 768px) {
     .sidebar {
-        transform: translateX(-250px);
+        width: 100%; /* Set width to 100% for off-canvas */
         position: absolute;
         top: 0;
+        left: -100%; /* Hide sidebar by default */
         bottom: 0;
         z-index: 1000;
+        transition: transform 0.3s ease-in-out;
     }
 
     .sidebar.show {
-        transform: translateX(0);
+        transform: translateX(100%); /* Show sidebar when toggled */
     }
 
     .sidebar-toggle {
         display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #6d6d6d;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1100;
     }
 
     .main {
-        padding: 20px 40px;
+        padding: 20px 10%; /* Adjusted padding for smaller screens */
+    }
+}
+
+/* Media query for extra small screens */
+@media (max-width: 576px) {
+    .main {
+        padding: 15px 5%; /* Further adjust padding */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 6px; /* Reduce padding in inputs */
+    }
+
+    .custom-file-button {
+        padding: 6px 10px; /* Reduce padding in custom button */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .file-name {
+        font-size: 14px; /* Adjust font size */
     }
 }

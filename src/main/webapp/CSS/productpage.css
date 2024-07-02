@@ -6,7 +6,7 @@ body {
     padding: 50px 50px;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -24,14 +24,14 @@ a{
 }
 
 .main-product-item {
-    background-color: white;
+    background-color: #fce4a7;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
     width: 200px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .main-product-item img.main-productImage {
@@ -49,14 +49,15 @@ a{
 
 .main-product-item button.main-add-to-cart {
     background-color: #E6CCB2;
-    border: 1px solid black; /* Simplified border */
-    border-right-width: 7px; /* Adjusted for consistency */
-    border-bottom-width: 9px; /* Adjusted for consistency */
+    border: 1px solid black;
+    border-right-width: 7px;
+    border-bottom-width: 9px;
     border-radius: 15px;
     color: white;
     padding: 10px;
     text-transform: uppercase;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .main-product-item button.main-add-to-cart:hover {
@@ -69,4 +70,55 @@ a{
     color: #666;
     text-align: center;
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .main-product-item {
+        width: 150px;
+        margin: 10px 5px;
+        padding: 8px;
+    }
+
+    .main-product-item button.main-add-to-cart {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .main-product-item img.main-productImage {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-home-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-product-item {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .main-product-item button.main-add-to-cart {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .main-product-item img.main-productImage {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .main-product-item p.main-product-name,
+    .main-product-item p.main-product-price {
+        font-size: 14px;
+    }
 }

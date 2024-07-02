@@ -1,6 +1,9 @@
-body{
-    /* background-color: #b8deec; */
+body {
     background-color: #E6CCB2;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: medium;
+    padding: 50px 50px;
 }
 
 header {
@@ -18,13 +21,10 @@ header {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-
-
 /* Stile per il contenitore principale */
 .container {
     max-width: 500px;
     max-height: 100%;
-    /* margin: 0 auto; */
     margin: 0 auto 70px auto;
     transform: translateY(5%);
     padding: 20px;
@@ -60,11 +60,9 @@ input[type="text"], input[type="password"] {
     font-size: 16px;
 }
 
-
 /* Stile per le icone all'interno dei campi di input */
 .nameInput, .mailInput, .password, .indirizzo {
     position: relative;
-    
     width: 100%;
 }
 
@@ -111,10 +109,9 @@ input[type="text"], input[type="password"] {
     background-color: #bbb29abd;
 }
 
-.btn:active{
+.btn:active {
     background-color: #bbb29abd;
 }
-
 
 /* Stile per la sezione di accesso con social */
 .loginWith .btn {
@@ -142,4 +139,58 @@ hr {
 a {
     color: #007BFF;
     text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        margin: 10px 0;
+    }
+
+    .container {
+        margin: 0 auto 50px auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 6px;
+    }
 }

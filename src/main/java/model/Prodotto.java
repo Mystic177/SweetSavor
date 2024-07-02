@@ -19,6 +19,10 @@ public class Prodotto {
         this.img = img;
     }
 
+    public Prodotto() {
+        
+    }
+
     public String getNomeProdotto() {
         return nomeProdotto;
     }

@@ -1,11 +1,11 @@
-html{
+html {
     position: relative;
 }
-body{
+
+body {
     font-family: sans-serif;
     background-color: #E6CCB2;
 }
-
 
 .product-main-box {
     width: 100%;
@@ -22,24 +22,19 @@ body{
     border-radius: 30px;
 }
 
-
 .grid-product-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 20px;
-
 }
-
 
 .image-box {
     position: relative;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
-
-
 
 .user-box {
     display: flex;
@@ -47,16 +42,13 @@ body{
     align-items: flex-start;
 }
 
-
 .user-box form {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-
 /* Interazione utente */
-
 .availability {
     margin-top: 10px;
 }
@@ -65,18 +57,17 @@ body{
     color: green;
 }
 
-#check-i{
+#check-i {
     color: green;
 }
 
-#quantity{
+#quantity {
     width: 50px;
 }
 
-#cart-user{
+#cart-user {
     width: 20px;
     height: 20px;
-
     font-size: large;
 }
 
@@ -96,7 +87,6 @@ body{
     font-size: 16px;
     margin: 4px 6px;
     transition-duration: 300ms;
-
 }
 
 #buy-button:hover {
@@ -105,41 +95,53 @@ body{
     transform: scale(1.1);
 }
 
-
 .product-description {
     margin-top: 20px;
 }
-
 
 .product-description p {
     margin: 10px 0;
     font-size: 16px;
 }
 
-
 @media (max-width: 768px) {
     .grid-product-box {
         grid-template-columns: 1fr;
+        padding: 10px;
     }
 
-    .left-button, .right-button {
-        top: auto;
-        bottom: 0;
-        width: 40%;
-
-        transform: translateY(0);
+    .product-main-box {
+        padding: 15px;
+        border-radius: 20px;
     }
 
-    .left-button {
-        left: 0;
-        border-radius: 0 0 0 10px;
-    }
-
-    .right-button {
-        right: 0;
-        border-radius: 0 0 10px 0;
+    #buy-button {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
 
+@media (max-width: 576px) {
+    .product-main-box {
+        padding: 10px;
+        border-radius: 10px;
+    }
 
+    .grid-product-box {
+        padding: 5px;
+        gap: 10px;
+    }
 
+    .product-description p {
+        font-size: 14px;
+    }
+
+    #buy-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #quantity {
+        width: 40px;
+    }
+}

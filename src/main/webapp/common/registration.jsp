@@ -13,7 +13,7 @@
 
 <script src="../Javascript/commands.js"></script>
 <header>
-    <img id="cup" src="/logo/SweetSavor.png">
+    <img id="cup" src="../logo/SweetSavor.png">
 </header>
 
 <script src="/Javascript/control.js"></script>
