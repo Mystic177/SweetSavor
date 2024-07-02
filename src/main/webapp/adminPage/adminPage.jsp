@@ -15,9 +15,9 @@
     <div class="sidebar">
         <a href="addProduct.jsp" class="sidebar-link" data-url="addProduct.jsp">Aggiungi Prodotti</a>
         <a href="viewOrders.jsp" class="sidebar-link" data-url="viewOrders.jsp">Controlla Ordini</a>
-        <a href="analytics.jsp" class="sidebar-link" data-url="analytics.jsp">Dati Analitici</a>
+        <a href="modifyProduct.jsp" class="sidebar-link" data-url="modifyProduct.jsp">Modifica Prodotti</a>
         <a href="currentProducts.jsp" class="sidebar-link" data-url="currentProducts.jsp">Prodotti Presenti</a>
-        <a href="transactions.jsp" class="sidebar-link" data-url="transactions.jsp">Transazioni</a>
+        <a href="deleteProduct.jsp" class="sidebar-link" data-url="deleteProduct.jsp">Elimina prodotti</a>
     </div>
     <div class="main" id="content">
         <!-- parte dove viente caricato il  contenuto dinamico -->

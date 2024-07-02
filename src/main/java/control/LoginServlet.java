@@ -17,46 +17,45 @@ import model.UserDao;
 public class LoginServlet extends HttpServlet {
     private UserDao userDao;
 
-    public void init() {
-        userDao = new UserDao();
+    public void init() throws ServletException {
+        userDao = new UserDao(); // Inizializzazione del DAO all'avvio della servlet
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        // Verifica che email e password non siano vuoti
         if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
-            request.setAttribute("errorMessage", "Completare tutti i campi");
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/common/login.jsp?error=empty");
             return;
         }
 
         try {
-            // Recupero dell'utente dal database
+            // Verifica le credenziali dell'utente nel database
             User user = userDao.retrieveUser(email, password);
 
-            if (user != null) {
+            if (user != null && email.equals(user.getEmail()) && password.equals(user.getPassword())) {
+                // Imposta l'utente nella sessione
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser", user);
-
-                if (user.isAmministratore()) {
-                    response.sendRedirect(request.getContextPath() + "/adminPage/adminPage.jsp");
-                } else {
-                    String checkout = request.getParameter("checkout");
-                    if ("true".equals(checkout)) {
-                        response.sendRedirect(request.getContextPath() + "/common/checkout.jsp");
-                    } else {
-                        response.sendRedirect(request.getContextPath() + "/common/home.jsp");
-                    }
-                }
+                response.sendRedirect(request.getContextPath() + "/common/home.jsp");
             } else {
-                request.setAttribute("errorMessage", "Email o password non valide");
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                // Credenziali non valide, reindirizza alla pagina di login con un messaggio di errore
+                response.sendRedirect(request.getContextPath() + "/common/login.jsp?error=invalid");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            request.setAttribute("errorMessage", "Errore durante il login");
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            // Gestione dell'errore del database
+            System.out.println("Database error: " + e.getMessage());
+            response.sendRedirect(request.getContextPath() + "/common/login.jsp?error=db");
+        } finally {
+            // Chiudi le risorse, se necessario (lasciato al UserDao se implementa AutoCloseable)
         }
     }
 }
