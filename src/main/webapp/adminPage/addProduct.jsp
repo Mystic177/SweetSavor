@@ -1,54 +1,55 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- addProduct.jsp -->
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Prodotto" %>
+<%@ page import="model.ProdottoDao" %>
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8"  content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <title>Aggiungi Prodotti</title>
-    <link rel="stylesheet"  href="../CSS/admin.css">
+    <link rel="stylesheet" href="../CSS/admin.css">
 </head>
 <body>
+<script src="/Javascript/control.js"></script>
 <div class="card section">
     <h2>Aggiungi Prodotti</h2>
-    <form action="AddProductServlet" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="product-name">Nome Prodotto:</label>
-            <input type="text" id="product-name" name="productName">
-        </div>
-        <div class="form-group">
-            <label for="product-description">Descrizione Prodotto:</label>
-            <textarea id="product-description" name="productDescription"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="product-price">Prezzo Prodotto:</label>
-            <input type="number" id="product-price" name="productPrice" step="0.01">
-        </div>
-        <div class="form-group">
-            <label for="product-stock">Stock Prodotto:</label>
-            <input type="number" id="product-stock" name="productStock">
-        </div>
 
-
-        <select name="products" id="product-id-selection"></span><br>
-            <option value="051">Cioccolata</option>
-            <option value="052">Tisana</option>
-            <option value="053">Tè</option>
-            <option value="054">Regalo</option>
-        </select>
-        
+    <form action="../addProduct" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <br>
-            <label for="product-image">Immagine Prodotto:</label>
-            <input type="file" id="product-image" name="productImage" class="file-input">
-            <button type="button" class="custom-file-button" onclick="document.getElementById('product-image').click()">Scegli File</button>
+            <label for="productName">Nome Prodotto:</label>
+            <input type="text" id="productName" name="nomeProdotto" required>
         </div>
-
-
+        <div class="form-group">
+            <label for="productDescription">Descrizione Prodotto:</label>
+            <textarea id="productDescription" name="descrizione" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="productPrice">Prezzo Prodotto:</label>
+            <input type="number" id="productPrice" name="prezzo" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="productStock">Stock Prodotto:</label>
+            <input type="number" id="productStock" name="disponibilita" required>
+        </div>
+        <div class="form-group">
+            <label for="productCategory">Categoria Prodotto:</label>
+            <select id="productCategory" name="categoria" required>
+                <option value="cioccolata">Cioccolata</option>
+                <option value="tisana">Tisana</option>
+                <option value="te">Tè</option>
+                <option value="regalo">Regalo</option>
+                <option value="accessori">Accessori</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="productImage">Aggiungi Immagine </label>
+            <input type="file" id="productImage" name="img" class="file-input" required>
+        </div>
         <div class="form-group">
             <button type="submit" class="custom-file-button">Aggiungi Prodotto</button>
         </div>
     </form>
 </div>
+
 </body>
 </html>

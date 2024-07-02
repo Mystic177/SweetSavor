@@ -1,50 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
   <meta name="viewport" content="initial-scale=1, width=device-width">
-  <link rel="stylesheet" href="../CSS/home.css">
+  <link rel="stylesheet" href="<%= request.getContextPath() %>/CSS/fragments.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  
 </head>
 <body>
-  <header>
-    <img id="cup" src="./img/SweetSavor.png">
-  </header>
+<header>
+  <div class="logo-container">
+    <img id="cup" src="<%= request.getContextPath() %>/logo/SweetSavor.png" width="150" alt="SweetSavor Logo">
+  </div>
+</header>
+
 <div class="nav-bar">
-<ul class="menu">
-  <li><a href="index.html">HOME</a></li>
-  <li class="has-submenu">
-    <a href="TeaPage.html">TÈ</a>
-    <div class="submenu">
-      <a href="#">Te' Nero</a>
-      <a href="#">Te' Verde</a>
-      <a href="#">Te' Esotici</a>
-    </div>
-  </li>
-
-  <li><a href="TeaPage.html">CIOCCOLATA</a></li>
-  <li><a href="TeaPage.html">TISANE</a></li>
-  <li><a href="TeaPage.html">ACCESSORI</a></li>
-  <li><a href="TeaPage.html">REGALI</a></li>
-
-
-  <ul class="user-interaction-box">
-    <li><a href="../login.html"><i class='bx bxs-user' id="accBox"></i></a></li>
-
-    <div class="searchBarBox">
-      <input type="text" placeholder="Ricerca" class="searchBar">
-      <i class='bx bx-search'></i>
-    </div>
-
-    <div class="cart-icon">
-      <a href="carrello.html"><i class='bx bx-cart-add'></i></a>
-    </div>
-
+  <ul class="menu">
+    <li><a href="<%= request.getContextPath() %>/common/home.jsp">HOME</a></li>
+    <li><a href="<%= request.getContextPath() %>/categorie/te.jsp">T&Egrave</a></li>
+    <li><a href="<%= request.getContextPath() %>/categorie/cioccolate.jsp">CIOCCOLATA</a></li>
+    <li><a href="<%= request.getContextPath() %>/categorie/tisane.jsp">TISANE</a></li>
+    <li><a href="<%= request.getContextPath() %>/categorie/accessori.jsp">ACCESSORI</a></li>
+    <li><a href="<%= request.getContextPath() %>/categorie/regali.jsp">REGALI</a></li>
+    
+    <ul class="user-interaction-box">
+      <%
+        if (request.getSession(false) != null && session.getAttribute("currentSessionUser") != null) {
+      %>
+      <li><button onclick="logout()">Logout</button></li>
+      <% } else { %>
+      <li><a href="<%= request.getContextPath() %>/common/login.jsp">Login<i class='bx bxs-user' id="accBox"></i></a></li>
+      <% } %>
+      <div class="cart-icon">
+        <a href="<%= request.getContextPath() %>/common/cart.jsp"><i class='bx bx-cart-add'></i></a>
+      </div>
+    </ul>
   </ul>
-
-</ul>
-
-
 </div>
-
 </body>
 </html>

@@ -128,3 +128,64 @@ hr {
     border: none;
     border-top: 1px solid #ccc;
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 10px;
+        margin: 30px auto;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .terms {
+        font-size: 12px;
+    }
+
+    .loginWith .btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 15px 5px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    input[type="text"], input[type="password"] {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .terms {
+        font-size: 10px;
+    }
+
+    .loginWith .btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}

@@ -1,21 +1,34 @@
 package model;
 
 public class Prodotto {
-    
+    private String nomeProdotto;
     private String descrizione;//max chars
     private double prezzo;
-    private int disponibilità; //e quantità disponibile
+    private int disponibility; //e quantità disponibile
     private boolean disponibile;
     private String categoria;
-    private String imgUrl;
+    private byte[] img;
 
-    public Prodotto(String descrizione, double prezzo, int disponibilità, boolean disponibile, String venditore, String categoria, String imgUrl) {
+    public Prodotto(String nomeProdotto, String descrizione, double prezzo, int disponibility, boolean disponibile, String categoria, byte[] img) {
+        this.nomeProdotto = nomeProdotto;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
-        this.disponibilità = disponibilità;
+        this.disponibility = disponibility;
         this.disponibile = disponibile;
         this.categoria = categoria;
-        this.imgUrl = imgUrl;
+        this.img = img;
+    }
+
+    public Prodotto() {
+        
+    }
+
+    public String getNomeProdotto() {
+        return nomeProdotto;
+    }
+
+    public void setNomeProdotto(String nomeProdotto) {
+        this.nomeProdotto = nomeProdotto;
     }
 
     public String getDescrizione() {
@@ -33,13 +46,13 @@ public class Prodotto {
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
+    
 
-    public int getDisponibilità() {
-        return disponibilità;
-    }
-
-    public void setDisponibilità(int disponibilità) {
-        this.disponibilità = disponibilità;
+    public void setDisponibility(int disponibility) {
+        if(disponibility == 0) {
+            this.disponibile = false;
+        }
+        this.disponibility = disponibility;
     }
 
     public boolean isDisponibile() {
@@ -59,11 +72,15 @@ public class Prodotto {
         this.categoria = categoria;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public byte[] getImg() {
+        return img;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImg(byte[] img) {
+        this.img = img;
+    }
+
+    public int getDisponibility() {
+        return disponibility;
     }
 }

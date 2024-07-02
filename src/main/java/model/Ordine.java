@@ -2,11 +2,24 @@ package model;
 
 public class Ordine {
     private String orderID;
-    //OD
     private String dataOrdine;
-    private String clientID;
+    private String nomeCliente;
+    private String cognomeCliente;
+    private String cap;
+    private String indirizzoDiConsegna;
     private double totale;
     private boolean stato;
+
+    public Ordine(String orderID, String dataOrdine, String nomeCliente, String cognomeCliente, String cap, String indirizzoDiConsegna, double totale, boolean stato) {
+        this.orderID = orderID;
+        this.dataOrdine = dataOrdine;
+        this.nomeCliente = nomeCliente;
+        this.cognomeCliente = cognomeCliente;
+        this.cap = cap;
+        this.indirizzoDiConsegna = indirizzoDiConsegna;
+        this.totale = totale;
+        this.stato = stato;
+    }
 
     public String getOrderID() {
         return orderID;
@@ -24,12 +37,36 @@ public class Ordine {
         this.dataOrdine = dataOrdine;
     }
 
-    public String getClientID() {
-        return clientID;
+    public String getNomeCliente() {
+        return nomeCliente;
     }
 
-    public void setClientID(String clientID) {
-        this.clientID = clientID;
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    public String getCognomeCliente() {
+        return cognomeCliente;
+    }
+
+    public void setCognomeCliente(String cognomeCliente) {
+        this.cognomeCliente = cognomeCliente;
+    }
+
+    public String getCap() {
+        return cap;
+    }
+
+    public void setCap(String cap) {
+        this.cap = cap;
+    }
+
+    public String getIndirizzoDiConsegna() {
+        return indirizzoDiConsegna;
+    }
+
+    public void setIndirizzoDiConsegna(String indirizzoDiConsegna) {
+        this.indirizzoDiConsegna = indirizzoDiConsegna;
     }
 
     public double getTotale() {

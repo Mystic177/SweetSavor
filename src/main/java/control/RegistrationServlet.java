@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.UUID;
+import java.io.PrintWriter;
 
 @WebServlet("/register")
 public class RegistrationServlet extends HttpServlet {
@@ -30,33 +29,32 @@ public class RegistrationServlet extends HttpServlet {
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String username = request.getParameter("username"); // Ottieni il parametro username
+        String username = request.getParameter("username");
 
         // Verifica se username è null o una stringa vuota
         if (username == null || username.isEmpty()) {
-            PrintWriter out = response.getWriter();
-            //script javascript in caso di errore 
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('L'username non può essere vuoto');");
-            out.println("</script>");
-            response.sendRedirect(request.getContextPath() + "/registration.jsp");
-            return; // Esce dal metodo doPost
+            showError(response, "L'username non può essere vuoto");
+            return;
         }
 
-        String userID = UUID.randomUUID().toString();
-        User user = new User(nome, password, email, userID); // Assumi isAdmin a false
+        User user = new User(nome, password, email, false); // Assumi isAdmin a false
         user.setUsername(username);
-        user.setAmministratore(false);
 
         try {
             userDao.doSave(user);
-            response.sendRedirect(request.getContextPath() + "/home.jsp");
+            response.sendRedirect(request.getContextPath() + "/common/home.jsp");
         } catch (SQLException e) {
-            PrintWriter out = response.getWriter();
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('Registration failed');");
-            out.println("</script>");
+            showError(response, "Registrazione fallita");
             e.printStackTrace();
         }
+    }
+
+    private void showError(HttpServletResponse response, String message) throws IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('" + message + "');");
+        out.println("location='registration.jsp';");
+        out.println("</script>");
     }
 }
