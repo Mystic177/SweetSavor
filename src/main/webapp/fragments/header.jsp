@@ -20,8 +20,15 @@
     <li><a href="<%= request.getContextPath() %>/categorie/tisane.jsp">TISANE</a></li>
     <li><a href="<%= request.getContextPath() %>/categorie/accessori.jsp">ACCESSORI</a></li>
     <li><a href="<%= request.getContextPath() %>/categorie/regali.jsp">REGALI</a></li>
+    
     <ul class="user-interaction-box">
+      <%
+        if (request.getSession(false) != null && session.getAttribute("currentSessionUser") != null) {
+      %>
+      <li><button onclick="logout()">Logout</button></li>
+      <% } else { %>
       <li><a href="<%= request.getContextPath() %>/common/login.jsp">Login<i class='bx bxs-user' id="accBox"></i></a></li>
+      <% } %>
       <div class="cart-icon">
         <a href="<%= request.getContextPath() %>/common/cart.jsp"><i class='bx bx-cart-add'></i></a>
       </div>

@@ -20,9 +20,8 @@
 <div class="container">
     <h1>Registrati</h1>
 
-    
-    <form action="register" method="post" onsubmit="validateRegistrationForm()">
-        <div class="nameInput">
+    <form action="<%= request.getContextPath() %>/register" method="post" onsubmit="validateRegistrationForm()">
+    <div class="nameInput">
             <input type="text" placeholder="Nome" id="username" name="username" required>
             <i class='bx bxs-user'></i>
         </div>
