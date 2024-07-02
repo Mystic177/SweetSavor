@@ -4,16 +4,16 @@ public class Prodotto {
     private String nomeProdotto;
     private String descrizione;//max chars
     private double prezzo;
-    private int disponibilità; //e quantità disponibile
+    private int disponibility; //e quantità disponibile
     private boolean disponibile;
     private String categoria;
     private byte[] img;
 
-    public Prodotto(String nomeProdotto, String descrizione, double prezzo, int disponibilità, boolean disponibile, String categoria, byte[] img) {
+    public Prodotto(String nomeProdotto, String descrizione, double prezzo, int disponibility, boolean disponibile, String categoria, byte[] img) {
         this.nomeProdotto = nomeProdotto;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
-        this.disponibilità = disponibilità;
+        this.disponibility = disponibility;
         this.disponibile = disponibile;
         this.categoria = categoria;
         this.img = img;
@@ -42,16 +42,13 @@ public class Prodotto {
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
+    
 
-    public int getDisponibility() {
-        return disponibilità;
-    }
-
-    public void setDisponibilità(int disponibilità) {
-        if(disponibilità == 0) {
+    public void setDisponibility(int disponibility) {
+        if(disponibility == 0) {
             this.disponibile = false;
         }
-        this.disponibilità = disponibilità;
+        this.disponibility = disponibility;
     }
 
     public boolean isDisponibile() {
@@ -79,7 +76,7 @@ public class Prodotto {
         this.img = img;
     }
 
-    public int getDisponibilità() {
-        return disponibilità;
+    public int getDisponibility() {
+        return disponibility;
     }
 }

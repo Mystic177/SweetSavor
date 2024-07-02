@@ -25,9 +25,8 @@
         <!-- Showcase prodotti -->
         <%
             ArrayList<Prodotto> lista = null;
-            String categoriaDesiderata = "cioccolata";
             ProdottoDao prodottoDao = new ProdottoDao();
-            
+
 
             try {
                 lista = prodottoDao.doRetrieveByCategoria("cioccolata"); // Recupera tutti i prodotti
@@ -40,7 +39,7 @@
         %>
 
         <div class="main-product-item">
-            <a href="<%= request.getContextPath() %>/prodotto.jsp?nome=<%=prodotto.getNomeProdotto() %>">
+            <a href="<%= request.getContextPath() %>/categorie/prodotto.jsp?nome=<%=prodotto.getNomeProdotto() %>">
                 <img src="data:image/jpeg;base64,<%= new String(Base64.getEncoder().encode(prodotto.getImg())) %>" class="main-productImage" width="150">
                 <p class="main-product-name"><%= prodotto.getNomeProdotto() %></p>
                 <p class="main-product-price"><%= String.format("%.2f",prodotto.getPrezzo())%> &euro;</p>

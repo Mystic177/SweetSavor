@@ -16,8 +16,8 @@
 </head>
 <body>
 
-<%@ include file="/fragments/header.jsp" %>
-<style><%@ include file="/CSS/home.css" %></style>
+<%@include file="/fragments/header.jsp" %>
+<style><%@include file="/CSS/fragments.css"%></style>
 <main>
     <div class="home-container">
         <!-- Showcase prodotti -->

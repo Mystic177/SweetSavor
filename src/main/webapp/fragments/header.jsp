@@ -14,24 +14,20 @@
   
 <div class="nav-bar">
 <ul class="menu">
-  <li><a href=../common/home.jsp">HOME</a></li>
-  <li><a href="#">T&Egrave</a></li>
-  <li><a href="../categorie/cioccolate.jsp">CIOCCOLATA</a></li>
-  <li><a href="../categorie/result.jsp">TISANE</a></li>
-  <li><a href="../common/accessori.jsp">ACCESSORI</a></li>
-  <li><a href="../categorie/regali.jsp">REGALI</a></li>
+
+  <li><a href="<%= request.getContextPath() %>/common/home.jsp">HOME</a></li>
+  <li><a href="<%= request.getContextPath() %>/categorie/te.jsp">T&Egrave</a></li>
+  <li><a href="<%= request.getContextPath() %>/categorie/cioccolate.jsp">CIOCCOLATA</a></li>
+  <li><a href="<%= request.getContextPath() %>/categorie/tisane.jsp">TISANE</a></li>
+  <li><a href="<%= request.getContextPath() %>/categorie/accessori.jsp">ACCESSORI</a></li>
+  <li><a href="<%= request.getContextPath() %>/categorie/regali.jsp">REGALI</a></li>
 
 
   <ul class="user-interaction-box">
-    <li><a href="./login.jsp"><i class='bx bxs-user' id="accBox"></i></a></li>
-
-    <div class="searchBarBox">
-      <input type="text" placeholder="Ricerca" class="searchBar">
-      <i class='bx bx-search'></i>
-    </div>
+    <li><a href="./login.jsp">Login<i class='bx bxs-user' id="accBox"></i></a></li>
 
     <div class="cart-icon">
-      <a href="./cart.jsp"><i class='bx bx-cart-add'></i></a>
+      <a href="/common/cart.jsp"><i class='bx bx-cart-add'></i></a>
     </div>
 
   </ul>

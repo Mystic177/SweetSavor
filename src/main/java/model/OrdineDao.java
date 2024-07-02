@@ -7,12 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 public class OrdineDao implements OrdineDAOInterface{
 
-    private String jdbcURL = "jdbc:mysql://localhost:3306/tuo_database";
-    private String jdbcUsername = "tuo_username";
-    private String jdbcPassword = "tua_password";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/SweetSavor";
+    private String dbUser = "root";
+    private String dbPassword = "root";
+
 
     private static final String INSERT_ORDINE_SQL = "INSERT INTO Ordini (orderID, dataOrdine, clientID, totale, stato) VALUES (?, ?, ?, ?, ?);";
     private static final String SELECT_ORDINE_BY_ID = "SELECT orderID, dataOrdine, clientID, totale, stato FROM Ordini WHERE orderID = ?;";
@@ -23,7 +23,7 @@ public class OrdineDao implements OrdineDAOInterface{
     protected Connection getConnection() {
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+            connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
         } catch (SQLException e) {
             e.printStackTrace();
         }

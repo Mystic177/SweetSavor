@@ -97,14 +97,22 @@ public class ProdottoDao implements ProdottoDaoInterface {
                     int disponibilita = resultSet.getInt("disponibilita");
                     boolean disponibile = resultSet.getBoolean("disponibile");
                     String categoria = resultSet.getString("categoria");
-                    byte[] img = resultSet.getBytes("imgUrl");
+                    byte[] img = resultSet.getBytes("imgUrl"); // Ottieni l'immagine come array di byte
 
+                    // Crea e restituisci un nuovo oggetto Prodotto con i dati ottenuti dal database
                     return new Prodotto(nome, descrizione, prezzo, disponibilita, disponibile, categoria, img);
                 }
             }
+        } catch (SQLException e) {
+            // Gestione dell'eccezione, log o rilancio a seconda delle necessità dell'applicazione
+            throw new SQLException("Errore durante il recupero del prodotto per nome: " + name, e);
         }
+
+        // Se non è stato trovato nessun prodotto con il nome specificato, restituisci null
         return null;
     }
+
+
 
     @Override
     public ArrayList<Prodotto> doRetrieveAll() throws SQLException {

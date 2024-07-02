@@ -11,8 +11,8 @@
     <script src="https://kit.fontawesome.com/54779b1c8e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<%@ include file="../fragments/header.jsp" %>
-<style><%@ include file="../CSS/home.css" %></style>
+<%@include file="/fragments/header.jsp" %>
+<style><%@include file="/CSS/fragments.css"%></style>
 <script src="../Javascript/commands.js"></script>
 
 <div class="product-main-box">
@@ -43,14 +43,14 @@
 
         <div class="product-box">
             <div class="image-box">
-                <img class="mySlides" src="data:image/jpeg;base64, <%= imgBase64 %>" height="300">
+                <img class="mySlides" src="data:image/jpeg;base64,<%= imgBase64 %>" height="300">
             </div>
 
             <div class="user-box">
                 <div class="product-description">
                     <p><%= prodotto.getNomeProdotto() %></p>
-                    <p><%= String.format("%.2f",prodotto.getPrezzo())%> &euro;</p>
-                        
+                    <p><%= String.format("%.2f", prodotto.getPrezzo()) %> &euro;</p>
+
                     <p>Ingredienti: <%= prodotto.getDescrizione() %></p>
                     <div class="quantity">
                         <label for="quantity">Quantità:</label>
@@ -71,7 +71,8 @@
         </div>
 
         <% } else { %>
-        <p>Nessun prodotto disponibile con questo nome.</p>
+        <p>Nessun prodotto disponibile con questo nome.
+            <%= productName %></p>
         <% } %>
 
         <%

@@ -15,9 +15,9 @@
     <script src="https://kit.fontawesome.com/54779b1c8e.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<%@include file="/fragments/header.jsp" %>
+<style><%@include file="/CSS/fragments.css"%></style>
 
-<%@ include file="/fragments/header.jsp" %>
-<style><%@ include file="/CSS/home.css" %></style>
 <main>
     <h1 class="home-header">Scopri la nostra vasta selezione di tè!</h1>
     <div class="home-container">
