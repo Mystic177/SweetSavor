@@ -21,11 +21,6 @@ public class LoginServlet extends HttpServlet {
         userDao = new UserDao(); // Inizializzazione del DAO all'avvio della servlet
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doPost(request, response);
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("email");
@@ -41,7 +36,7 @@ public class LoginServlet extends HttpServlet {
             // Verifica le credenziali dell'utente nel database
             User user = userDao.retrieveUser(email, password);
 
-            if (user != null && email.equals(user.getEmail()) && password.equals(user.getPassword())) {
+            if (user != null) {
                 // Imposta l'utente nella sessione
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser", user);
@@ -59,3 +54,4 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
+
