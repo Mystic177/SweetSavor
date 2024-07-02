@@ -8,7 +8,7 @@
 <body>
   <header>
     <div class="logo-container">
-    <img id="cup" src="../img/SweetSavor.png" width="150">
+    <img id="cup" src="./img/SweetSavor.png" width="150">
     </div>
   </header>
   
